@@ -25,7 +25,7 @@ public class GridEditor : Editor
         grid = (Grid)target;
 
         if (grid.xSize != xSize.intValue || grid.zSize != zSize.intValue)
-            worldBuilder.UpdateWorldPlane(xSize.intValue, zSize.intValue);
+            worldBuilder.CreateWorld(xSize.intValue, zSize.intValue);
 
         serializedObject.ApplyModifiedProperties();
     }
