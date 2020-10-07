@@ -21,11 +21,32 @@ public class Grid : MonoBehaviour
             }
     }
 
+    public Node GetNode(Vector2Int coords)
+    {
+        int x = coords.x;
+        int z = coords.y;
+
+        if (gridOfNodes[x, z] != null)
+            return gridOfNodes[x, z];
+        else
+        {
+            Debug.LogError("Node wasn't found!");
+            return null;
+        }
+    }
+
     public Vector3 CoordsToVector3(Vector2Int _coords)
     {
         int x = Mathf.CeilToInt(_coords.x - (xSize / 2f));
         int z = Mathf.CeilToInt(_coords.y - (zSize / 2f));
         return new Vector3(x, 0f, z);
+    }
+
+    public Vector2Int Vector3ToCoords(Vector3 position)
+    {
+        int x = Mathf.FloorToInt(position.x + (xSize / 2f));
+        int z = Mathf.FloorToInt(position.z + (zSize / 2f));
+        return new Vector2Int(x, z);
     }
 }
 

@@ -186,6 +186,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   showGrid: 1
   worldPlane: {fileID: 311954282}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!114 &132121205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,7 +229,7 @@ GameObject:
   - component: {fileID: 311954285}
   - component: {fileID: 311954284}
   - component: {fileID: 311954283}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -455,7 +458,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.32
+  orthographic size: 3.35
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
