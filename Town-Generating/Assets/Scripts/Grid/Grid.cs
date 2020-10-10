@@ -34,7 +34,7 @@ public class Grid : MonoBehaviour
 public class Node
 {
     public Vector2Int coords;
-    public GameObject road;
+    public GameObject go;
 
     public Node(Vector2Int _coords)
     {

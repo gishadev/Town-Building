@@ -8,15 +8,18 @@ public class WorldBuilder : MonoBehaviour
     #endregion
 
     #region PUBLIC_FIELDS
+    public Highlight highlight;
+    [Space]
     public bool showGrid = true;
     public Transform worldPlane;
     public LayerMask groundLayer;
-
-    public RoadBuilder roadBuilder;
+    [Space]
+    public ObjectBuilder objectBuilder;
     #endregion
 
     #region PRIVATE_FIELDS
     Node selectedNode;
+    Node oldNode;
     Vector3 groundPos;
     #endregion
 
@@ -30,6 +33,8 @@ public class WorldBuilder : MonoBehaviour
         Instance = this;
         Grid = GetComponent<Grid>();
         cam = Camera.main;
+
+        objectBuilder.nowObject = objectBuilder.straightRoad;
     }
 
     void Start()
@@ -40,9 +45,21 @@ public class WorldBuilder : MonoBehaviour
     void Update()
     {
         Raycast();
-        if (Input.GetMouseButtonDown(0))
+
+        // Building.
+        if (Input.GetMouseButton(0))
             if (selectedNode != null)
-                roadBuilder.BuildRoad(selectedNode, roadBuilder.straight);
+            {
+                objectBuilder.BuildObject(selectedNode);
+                highlight.Disable();
+            }
+
+
+        // Rotation.
+        if (Input.mouseScrollDelta.y > 0)
+            objectBuilder.RotateObject(90f);
+        else if (Input.mouseScrollDelta.y < 0)
+            objectBuilder.RotateObject(-90f);
     }
 
     void Raycast()
@@ -55,9 +72,32 @@ public class WorldBuilder : MonoBehaviour
             groundPos = hitInfo.point;
 
             selectedNode = GridTransform.GetNode(groundPos);
+
+            if (oldNode == null)
+                oldNode = selectedNode;
+
+            if (selectedNode != null)
+            {
+                if (selectedNode != oldNode)
+                    highlight.Enable();
+
+                Vector3 position = GridTransform.FromCoordsToVector3(selectedNode.coords) + Vector3.up * worldPlane.localScale.y / 2f;
+                Quaternion rotation = objectBuilder.GetRotation();
+
+                if (!GridTransform.IsBlocked(selectedNode))
+                    highlight.PlaceHighlight(position, rotation);
+                else
+                    highlight.PlaceHighlight(position, rotation, highlight.highlightMaterial);
+
+                oldNode = selectedNode;
+            }
         }
         else
+        {
             selectedNode = null;
+            highlight.Disable();
+        }
+
     }
 
     public void CreateWorld(int xScale, int zScale)
@@ -94,15 +134,15 @@ public class WorldBuilder : MonoBehaviour
             }
 
             #region Node
-            if (selectedNode != null)
-            {
-                Gizmos.color = new Color(0, 1f, 0, 0.35f);
+            //if (selectedNode != null)
+            //{
+            //    Gizmos.color = new Color(0, 1f, 0, 0.35f);
 
-                Vector3 center = GridTransform.FromCoordsToVector3(selectedNode.coords);
-                Vector3 size = Vector3.one;
+            //    Vector3 center = GridTransform.FromCoordsToVector3(selectedNode.coords);
+            //    Vector3 size = Vector3.one;
 
-                Gizmos.DrawCube(center, size);
-            }
+            //    Gizmos.DrawCube(center, size);
+            //}
             #endregion
         }
     }
@@ -110,31 +150,64 @@ public class WorldBuilder : MonoBehaviour
 }
 
 [Serializable]
-public class RoadBuilder
+public class ObjectBuilder
 {
+    #region PUBLIC_FIELDS
     [Header("General")]
-    public Transform roadsParent;
+    public Transform objectsParent;
 
     [Header("Roads Prefabs")]
-    public GameObject straight;
-    public GameObject turn;
-    public GameObject cross;
-    public GameObject triplet;
+    public Object straightRoad;
+    public Object turnRoad;
+    public Object crossRoad;
+    public Object tripletRoad;
+    #endregion
 
+    #region PRIVATE_FIELDS
+    float yRotation;
+    [HideInInspector] public Object nowObject;
+    #endregion
 
-    public void BuildRoad(Node node, GameObject prefab)
+    public void BuildObject(Node node)
     {
-        if (!IsBlocked(node))
+        if (!GridTransform.IsBlocked(node))
         {
             Vector3 position = GridTransform.FromCoordsToVector3(node.coords);
             position.y = 0.5f;
 
-            node.road = GameObject.Instantiate(prefab, position, Quaternion.identity, roadsParent);
+            node.go = GameObject.Instantiate(nowObject.go, position, GetRotation(), objectsParent);
         }
     }
 
-    bool IsBlocked(Node node)
+    public void RotateObject(float yRot)
     {
-        return node.road != null;
+        yRotation += yRot;
+    }
+
+    public Quaternion GetRotation()
+    {
+        return Quaternion.Euler(Vector3.up * yRotation);
+    }
+}
+
+[Serializable]
+public class Object
+{
+    public GameObject go;
+
+    public MeshRenderer MeshRenderer
+    {
+        get
+        {
+            return go.GetComponent<MeshRenderer>();
+        }
+    }
+
+    public MeshFilter MeshFilter
+    {
+        get
+        {
+            return go.GetComponent<MeshFilter>();
+        }
     }
 }

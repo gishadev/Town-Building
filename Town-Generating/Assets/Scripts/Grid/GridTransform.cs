@@ -41,4 +41,9 @@ public static class GridTransform
         int z = Mathf.FloorToInt(position.z + (Grid.Instance.zSize / 2f));
         return new Vector2Int(x, z);
     }
+
+    public static bool IsBlocked(Node node)
+    {
+        return node.go != null;
+    }
 }
