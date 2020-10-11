@@ -60,6 +60,11 @@ public class WorldBuilder : MonoBehaviour
             objectBuilder.RotateObject(90f);
         else if (Input.mouseScrollDelta.y < 0)
             objectBuilder.RotateObject(-90f);
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            ClearWorld();
+        }
     }
 
     void Raycast()
@@ -81,7 +86,7 @@ public class WorldBuilder : MonoBehaviour
                 if (selectedNode != oldNode)
                     highlight.Enable();
 
-                Vector3 position = GridTransform.FromCoordsToVector3(selectedNode.coords) + Vector3.up * worldPlane.localScale.y / 2f;
+                Vector3 position = GridTransform.FromCoordsToVector3(selectedNode.coords);
                 Quaternion rotation = objectBuilder.GetRotation();
 
                 if (!GridTransform.IsBlocked(selectedNode))
@@ -104,6 +109,12 @@ public class WorldBuilder : MonoBehaviour
     {
         Grid.CreateGridOfNodes(xScale, zScale);
         worldPlane.localScale = new Vector3(xScale, worldPlane.localScale.y, zScale);
+    }
+    
+    public void ClearWorld()
+    {
+        for (int i = 0; i < objectBuilder.objectsParent.childCount; i++)
+            Destroy(objectBuilder.objectsParent.GetChild(i).gameObject);
     }
 
     #region Gizmos
@@ -170,10 +181,15 @@ public class ObjectBuilder
         if (!GridTransform.IsBlocked(node))
         {
             Vector3 position = GridTransform.FromCoordsToVector3(node.coords);
-            position.y = 0.5f;
 
             node.go = GameObject.Instantiate(nowObject.Obj, position, GetRotation(), objectsParent);
         }
+    }
+
+    public void ChangeObject(int index)
+    {
+        nowObject = objects[index];
+        WorldBuilder.Instance.highlight.ChangeHighlightModel(nowObject.MeshRenderer, nowObject.MeshFilter);
     }
 
     public void RotateObject(float yRot)

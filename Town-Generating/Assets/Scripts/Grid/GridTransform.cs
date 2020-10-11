@@ -31,8 +31,9 @@ public static class GridTransform
     public static Vector3 FromCoordsToVector3(Vector2Int coords)
     {
         int x = Mathf.CeilToInt(coords.x - (Grid.Instance.xSize / 2f));
+        float y = 0.501f;
         int z = Mathf.CeilToInt(coords.y - (Grid.Instance.zSize / 2f));
-        return new Vector3(x, 0f, z);
+        return new Vector3(x, y, z);
     }
 
     public static Vector2Int FromVector3ToCoords(Vector3 position)

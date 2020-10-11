@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 20e0fda110af27f46a9a58e8bc54227d, type: 3}
-  m_Name: Church 1
+  m_Name: House
   m_EditorClassIdentifier: 
-  Name: Church
-  Obj: {fileID: 8295718020759263650, guid: 4bd5371c2f39421489f7f43c54dbebb3, type: 3}
-  Sprite: {fileID: 21300000, guid: 7208dc388b3ebac41b1e87231056b547, type: 3}
+  Name: House
+  Obj: {fileID: 4633299730165027775, guid: 563438db10138114f8aa598a5b440f5c, type: 3}
+  Sprite: {fileID: 21300000, guid: 5cd29a24259de0845801b9a901bf17e3, type: 3}

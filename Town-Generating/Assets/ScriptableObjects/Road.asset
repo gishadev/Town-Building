@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 20e0fda110af27f46a9a58e8bc54227d, type: 3}
-  m_Name: Church 1
+  m_Name: Road
   m_EditorClassIdentifier: 
-  Name: Church
-  Obj: {fileID: 8295718020759263650, guid: 4bd5371c2f39421489f7f43c54dbebb3, type: 3}
-  Sprite: {fileID: 21300000, guid: 7208dc388b3ebac41b1e87231056b547, type: 3}
+  Name: Road
+  Obj: {fileID: 8073929040729097281, guid: 4f7e92b5d7ef31343a1b71009d974911, type: 3}
+  Sprite: {fileID: 21300000, guid: 22c8b543e1fb2744eb34bc35f5feb6a1, type: 3}

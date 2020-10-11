@@ -166,6 +166,7 @@ GameObject:
   - component: {fileID: 132121206}
   - component: {fileID: 132121205}
   - component: {fileID: 132121204}
+  - component: {fileID: 132121207}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -194,15 +195,10 @@ MonoBehaviour:
   objectBuilder:
     objectsParent: {fileID: 1088663151}
     objects:
-    - Name: Road
-      go: {fileID: 8073929040729097281, guid: 4f7e92b5d7ef31343a1b71009d974911, type: 3}
-    - Name: Church
-      go: {fileID: 8295718020759263650, guid: 4bd5371c2f39421489f7f43c54dbebb3, type: 3}
-    - Name: House_1
-      go: {fileID: 4633299730165027775, guid: 563438db10138114f8aa598a5b440f5c, type: 3}
-    nowObject:
-      Name: 
-      go: {fileID: 0}
+    - {fileID: 11400000, guid: e4d840c2d0b36f54297da0ae5e7a5d91, type: 2}
+    - {fileID: 11400000, guid: d9225721409d6c64889ed4481cf30848, type: 2}
+    - {fileID: 11400000, guid: 57945b33665f93448b9a88d2d1e9a6b0, type: 2}
+    nowObject: {fileID: 0}
 --- !u!114 &132121205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,6 +227,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &132121207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132121203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd07f1cb7313ec3428e920a6276648cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hotbarTrans: {fileID: 1462858085}
+  UIElementPrefab: {fileID: 8378241129535686600, guid: 129d82c054aa63541986ca221eb84e1c, type: 3}
 --- !u!1 &311954281
 GameObject:
   m_ObjectHideFlags: 0
@@ -559,7 +569,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -852,8 +862,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1662942982}
+  m_Children: []
   m_Father: {fileID: 803919416}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -877,13 +886,13 @@ MonoBehaviour:
   m_Padding:
     m_Left: 50
     m_Right: 0
-    m_Top: 15
+    m_Top: 5
     m_Bottom: 0
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 100, y: 100}
-  m_Spacing: {x: 0, y: 0}
+  m_Spacing: {x: 25, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
 --- !u!114 &1462858087
@@ -940,7 +949,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1494287917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -948,18 +957,18 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1494287916}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 90b532ff1df3dea40b56dae3f8d24125, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   targets:
   - name: Road
-    obj: {fileID: 919132149155446097, guid: db89e1b64cf926b49bfd944ef5e941c5, type: 3}
+    obj: {fileID: 8073929040729097281, guid: 4f7e92b5d7ef31343a1b71009d974911, type: 3}
   - name: House
-    obj: {fileID: 919132149155446097, guid: 103dccfa32d08d24d8fdbf6b9a0b7d3e, type: 3}
+    obj: {fileID: 4633299730165027775, guid: 563438db10138114f8aa598a5b440f5c, type: 3}
   - name: Church
-    obj: {fileID: 919132149155446097, guid: 13daf982e2668544abff3b3d7d9e529e, type: 3}
+    obj: {fileID: 8295718020759263650, guid: 4bd5371c2f39421489f7f43c54dbebb3, type: 3}
   overlays: []
   customFolder: Resources/Sprites/Icons
   rawIcon: {fileID: 0}
@@ -979,81 +988,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1662942981
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1662942982}
-  - component: {fileID: 1662942984}
-  - component: {fileID: 1662942983}
-  m_Layer: 5
-  m_Name: Image
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1662942982
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1662942981}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1462858085}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1662942983
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1662942981}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 4094043899491021400, guid: cba6f17db32b40d47956ed3e644a0377, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1662942984
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1662942981}
-  m_CullTransparentMesh: 0
 --- !u!1 &1834157038
 GameObject:
   m_ObjectHideFlags: 0
