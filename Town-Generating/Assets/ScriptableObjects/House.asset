@@ -15,3 +15,5 @@ MonoBehaviour:
   Name: House
   Obj: {fileID: 4633299730165027775, guid: 563438db10138114f8aa598a5b440f5c, type: 3}
   Sprite: {fileID: 21300000, guid: 5cd29a24259de0845801b9a901bf17e3, type: 3}
+  xSize: 2
+  zSize: 2

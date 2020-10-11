@@ -37,9 +37,13 @@ public static class GridTransform
         int newXSize = yRotation % 180f == 0 ? xSize : zSize;
         int newZSize = yRotation % 180f == 0 ? zSize : xSize;
 
-        Vector2Int inputCoords = FromVector3ToCoords(position);
-        Vector2Int offset = GetOffsetCoords(newXSize, newZSize);
-        Vector2Int startCoords = new Vector2Int(inputCoords.x - offset.x, inputCoords.y - offset.y);
+        Vector2 inputCoords = FromVector3ToRawCoords(position);
+        Vector2 offset = GetOffsetCoords(newXSize, newZSize);
+
+        // Applying offsets differently for x/y % 2 == 0 or x/y % 2 != 0.
+        int xCoord = newXSize % 2 == 0 ? Mathf.RoundToInt(inputCoords.x - offset.x - 0.5f) : Mathf.CeilToInt(inputCoords.x - offset.x);
+        int zCoord = newZSize % 2 == 0 ? Mathf.RoundToInt(inputCoords.y - offset.y - 0.5f) : Mathf.CeilToInt(inputCoords.y - offset.y);
+        Vector2Int startCoords = new Vector2Int(xCoord, zCoord);
 
         Node[] result = new Node[newXSize * newZSize];
 
@@ -75,6 +79,13 @@ public static class GridTransform
         return new Vector2Int(x, z);
     }
 
+    public static Vector2 FromVector3ToRawCoords(Vector3 position)
+    {
+        float x = position.x + (Grid.Instance.xSize / 2f);
+        float z = position.z + (Grid.Instance.zSize / 2f);
+        return new Vector2(x, z);
+    }
+
     public static Vector3 CenterVector3FromCoords(Vector2Int a, Vector2Int b)
     {
         Vector3 firstPos = FromCoordsToVector3(a);
@@ -98,12 +109,12 @@ public static class GridTransform
         return nodes.Any(x => x.go != null);
     }
 
-    public static Vector2Int GetOffsetCoords(int xSize, int zSize)
+    public static Vector2 GetOffsetCoords(int xSize, int zSize)
     {
-        int xOffset = xSize % 2 == 0 ? Mathf.RoundToInt(xSize / 2f) : Mathf.CeilToInt(xSize / 2f) - 1;
-        int zOffset = zSize % 2 == 0 ? Mathf.RoundToInt(zSize / 2f) : Mathf.CeilToInt(zSize / 2f) - 1;
+        float xOffset = xSize % 2 == 0 ? xSize / 2f - 0.5f : Mathf.Ceil(xSize / 2f);
+        float zOffset = zSize % 2 == 0 ? zSize / 2f - 0.5f : Mathf.Ceil(zSize / 2f);
 
-        return new Vector2Int(xOffset, zOffset);
+        return new Vector2(xOffset, zOffset);
     }
     #endregion
 }
