@@ -145,15 +145,15 @@ public class WorldBuilder : MonoBehaviour
             }
 
             #region Node
-            //if (selectedNode != null)
-            //{
-            //    Gizmos.color = new Color(0, 1f, 0, 0.35f);
+            if (selectedNode != null)
+            {
+                Gizmos.color = new Color(0, 1f, 0, 0.35f);
 
-            //    Vector3 center = GridTransform.FromCoordsToVector3(selectedNode.coords);
-            //    Vector3 size = Vector3.one;
+                Vector3 center = GridTransform.FromCoordsToVector3(selectedNode.coords);
+                Vector3 size = Vector3.one;
 
-            //    Gizmos.DrawCube(center, size);
-            //}
+                Gizmos.DrawCube(center, size);
+            }
             #endregion
         }
     }
