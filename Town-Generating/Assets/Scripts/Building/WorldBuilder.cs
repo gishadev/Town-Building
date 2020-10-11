@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System;
+using System.Linq;
 
 public class WorldBuilder : MonoBehaviour
 {
@@ -18,8 +19,8 @@ public class WorldBuilder : MonoBehaviour
     #endregion
 
     #region PRIVATE_FIELDS
-    Node selectedNode;
-    Node oldNode;
+    Node[] selectedNodes;
+    Node[] oldNodes;
     Vector3 groundPos;
     #endregion
 
@@ -48,12 +49,11 @@ public class WorldBuilder : MonoBehaviour
 
         // Building.
         if (Input.GetMouseButton(0))
-            if (selectedNode != null)
+            if (selectedNodes != null)
             {
-                objectBuilder.BuildObject(selectedNode);
+                objectBuilder.BuildObject(selectedNodes);
                 highlight.Disable();
             }
-
 
         // Rotation.
         if (Input.mouseScrollDelta.y > 0)
@@ -76,30 +76,44 @@ public class WorldBuilder : MonoBehaviour
         {
             groundPos = hitInfo.point;
 
-            selectedNode = GridTransform.GetNode(groundPos);
+            selectedNodes = GridTransform.GetNodes(
+                groundPos,
+                objectBuilder.nowObject.xSize,
+                objectBuilder.nowObject.zSize,
+                objectBuilder.GetRotation().eulerAngles.y);
 
-            if (oldNode == null)
-                oldNode = selectedNode;
+            if (oldNodes == null)
+                oldNodes = selectedNodes;
 
-            if (selectedNode != null)
+            if (selectedNodes != null)
             {
-                if (selectedNode != oldNode)
+                if (selectedNodes != oldNodes)
                     highlight.Enable();
 
-                Vector3 position = GridTransform.FromCoordsToVector3(selectedNode.coords);
+                Node aNode = selectedNodes.First();
+                Node bNode = selectedNodes.Last();
+
                 Quaternion rotation = objectBuilder.GetRotation();
 
-                if (!GridTransform.IsBlocked(selectedNode))
-                    highlight.PlaceHighlight(position, rotation);
-                else
-                    highlight.PlaceHighlight(position, rotation, highlight.highlightMaterial);
+                if (aNode != null && bNode != null)
+                {
+                    Vector3 position = GridTransform.CenterVector3FromCoords(aNode.coords, bNode.coords);
 
-                oldNode = selectedNode;
+                    if (!GridTransform.IsBlocked(selectedNodes))
+                        highlight.PlaceHighlight(position, rotation);
+                    else
+                        highlight.PlaceHighlight(position, rotation, highlight.highlightMaterial);
+                }
+                else
+                    highlight.Disable();
+
+                oldNodes = selectedNodes;
             }
         }
+
         else
         {
-            selectedNode = null;
+            selectedNodes = null;
             highlight.Disable();
         }
 
@@ -110,7 +124,7 @@ public class WorldBuilder : MonoBehaviour
         Grid.CreateGridOfNodes(xScale, zScale);
         worldPlane.localScale = new Vector3(xScale, worldPlane.localScale.y, zScale);
     }
-    
+
     public void ClearWorld()
     {
         for (int i = 0; i < objectBuilder.objectsParent.childCount; i++)
@@ -145,14 +159,22 @@ public class WorldBuilder : MonoBehaviour
             }
 
             #region Node
-            if (selectedNode != null)
+            if (selectedNodes != null)
             {
                 Gizmos.color = new Color(0, 1f, 0, 0.35f);
 
-                Vector3 center = GridTransform.FromCoordsToVector3(selectedNode.coords);
-                Vector3 size = Vector3.one;
+                for (int i = 0; i < selectedNodes.Length; i++)
+                {
+                    Node n = selectedNodes[i];
 
-                Gizmos.DrawCube(center, size);
+                    if (n != null)
+                    {
+                        Vector3 center = GridTransform.FromCoordsToVector3(n.coords);
+                        Vector3 size = Vector3.one;
+
+                        Gizmos.DrawCube(center, size);
+                    }
+                }
             }
             #endregion
         }
@@ -176,13 +198,17 @@ public class ObjectBuilder
     [HideInInspector] public ObjectData nowObject;
     #endregion
 
-    public void BuildObject(Node node)
+    public void BuildObject(Node[] nodes)
     {
-        if (!GridTransform.IsBlocked(node))
+        if (!GridTransform.IsBlocked(nodes))
         {
-            Vector3 position = GridTransform.FromCoordsToVector3(node.coords);
+            Node aNode = nodes.First();
+            Node bNode = nodes.Last();
+            Vector3 position = GridTransform.CenterVector3FromCoords(aNode.coords, bNode.coords);
 
-            node.go = GameObject.Instantiate(nowObject.Obj, position, GetRotation(), objectsParent);
+            GameObject go = GameObject.Instantiate(nowObject.Obj, position, GetRotation(), objectsParent);
+            foreach (Node n in nodes)
+                n.go = go;
         }
     }
 

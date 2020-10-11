@@ -8,7 +8,8 @@ public class ObjectData : ScriptableObject
     public GameObject Obj;
     public Sprite Sprite;
     [Header("Sizes")]
-    public int xSize, zSize;
+    public int xSize;
+    public int zSize;
 
 
     public MeshRenderer MeshRenderer
