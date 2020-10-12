@@ -11,6 +11,9 @@ public class Grid : MonoBehaviour
 
     public int xSize;
     public int zSize;
+
+    [HideInInspector] public Node firstNode;
+    [HideInInspector] public Node lastNode;
     #endregion
 
     void Awake()
@@ -28,6 +31,9 @@ public class Grid : MonoBehaviour
                 Vector2Int coords = new Vector2Int(x, z);
                 gridOfNodes[x, z] = new Node(coords);
             }
+
+        firstNode = gridOfNodes[0, 0];
+        lastNode = gridOfNodes[xS - 1, zS - 1];
     }
 }
 

@@ -22,6 +22,7 @@ public class WorldBuilder : MonoBehaviour
     Node[] selectedNodes;
     Node[] oldNodes;
     Vector3 groundPos;
+    BuildMode buildMode = 0;
     #endregion
 
     #region COMPONENETS
@@ -45,28 +46,30 @@ public class WorldBuilder : MonoBehaviour
 
     void Update()
     {
-        Raycast();
-
-        // Building.
-        if (Input.GetMouseButton(0))
-            if (selectedNodes != null)
-            {
-                objectBuilder.BuildObject(selectedNodes);
-                highlight.Disable();
-            }
-
-        // Rotation.
-        if (Input.mouseScrollDelta.y > 0)
-            objectBuilder.RotateObject(90f);
-        else if (Input.mouseScrollDelta.y < 0)
-            objectBuilder.RotateObject(-90f);
-
-        if (Input.GetKeyDown(KeyCode.R))
+        if (buildMode == BuildMode.Build)
         {
-            ClearWorld();
+            Raycast();
+
+            // Building.
+            if (Input.GetMouseButton(0))
+                if (selectedNodes != null)
+                {
+                    objectBuilder.BuildObject(selectedNodes);
+                    highlight.Disable();
+                }
+
+            // Rotation.
+            if (Input.GetKeyDown(KeyCode.R))
+                objectBuilder.RotateObject(90f);
+            else if (Input.GetKeyDown(KeyCode.F))
+                objectBuilder.RotateObject(-90f);
         }
+
+        if (Input.GetKeyDown(KeyCode.Home))
+            ClearWorld();
     }
 
+    #region Raycast
     void Raycast()
     {
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
@@ -118,7 +121,16 @@ public class WorldBuilder : MonoBehaviour
         }
 
     }
+    #endregion
 
+    #region Build Mode
+    public void ChangeBuildMode(BuildMode newMode)
+    {
+        buildMode = newMode;
+    }
+    #endregion
+
+    #region World
     public void CreateWorld(int xScale, int zScale)
     {
         Grid.CreateGridOfNodes(xScale, zScale);
@@ -130,6 +142,7 @@ public class WorldBuilder : MonoBehaviour
         for (int i = 0; i < objectBuilder.objectsParent.childCount; i++)
             Destroy(objectBuilder.objectsParent.GetChild(i).gameObject);
     }
+    #endregion
 
     #region Gizmos
     void OnDrawGizmos()
@@ -195,6 +208,7 @@ public class ObjectBuilder
 
     #region PRIVATE_FIELDS
     float yRotation;
+
     [HideInInspector] public ObjectData nowObject;
     #endregion
 
@@ -227,4 +241,11 @@ public class ObjectBuilder
     {
         return Quaternion.Euler(Vector3.up * yRotation);
     }
+}
+
+public enum BuildMode
+{
+    Nothing,
+    Build,
+    Destroy
 }
