@@ -217,8 +217,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8660b8e92bfc6d4f8742b24ec7cd439, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xSize: 15
-  zSize: 15
+  xSize: 55
+  zSize: 55
 --- !u!4 &132121206
 Transform:
   m_ObjectHideFlags: 0
@@ -277,7 +277,7 @@ Transform:
   m_GameObject: {fileID: 311954281}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 15, y: 1, z: 15}
+  m_LocalScale: {x: 55, y: 1, z: 55}
   m_Children: []
   m_Father: {fileID: 58607206}
   m_RootOrder: 0
@@ -890,9 +890,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5c9b65fb29e50544bf0430c692f20d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 35
+  rotationSpeed: 55
+  rotationMouseSens: 0.25
   rotationSmoothness: 15
   movementSpeed: 15
+  movementMouseSens: 1
   movementSmoothness: 125
   zoomSmoothness: 255
   zoomSteps: 10
@@ -1245,6 +1247,6 @@ MonoBehaviour:
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 100, y: 100}
-  m_Spacing: {x: 25, y: 0}
+  m_Spacing: {x: 35, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2

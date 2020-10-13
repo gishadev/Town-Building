@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Turn Brick Wall
   Obj: {fileID: 2376672490801498733, guid: 29715190536444443a948d647ce88ae7, type: 3}
-  Sprite: {fileID: 21300000, guid: 22c8b543e1fb2744eb34bc35f5feb6a1, type: 3}
+  Sprite: {fileID: 21300000, guid: 6a5da17e37ee11f44bb58599d7f57161, type: 3}
   xSize: 1
   zSize: 1
