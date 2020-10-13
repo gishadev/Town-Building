@@ -195,9 +195,15 @@ MonoBehaviour:
   objectBuilder:
     objectsParent: {fileID: 1088663151}
     objects:
-    - {fileID: 11400000, guid: e4d840c2d0b36f54297da0ae5e7a5d91, type: 2}
+    - {fileID: 11400000, guid: 4c466f8716cd30e42a6c7c56c181cc78, type: 2}
+    - {fileID: 11400000, guid: 54e7a0167f3f3b247a6e70c7ca1b4f0a, type: 2}
+    - {fileID: 11400000, guid: b56f248d76f9fe741b55f139426c0ccd, type: 2}
     - {fileID: 11400000, guid: d9225721409d6c64889ed4481cf30848, type: 2}
+    - {fileID: 11400000, guid: e4d840c2d0b36f54297da0ae5e7a5d91, type: 2}
+    - {fileID: 11400000, guid: 67b1f397e5720db45ba1c1dc7e0692e6, type: 2}
     - {fileID: 11400000, guid: 57945b33665f93448b9a88d2d1e9a6b0, type: 2}
+    - {fileID: 11400000, guid: 6e19185bf731a4a4f8c8572516acf91d, type: 2}
+    - {fileID: 11400000, guid: 9652050c5860aad46bc18edbd0af48a2, type: 2}
     nowObject: {fileID: 0}
 --- !u!114 &132121205
 MonoBehaviour:
@@ -1093,18 +1099,30 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1494287916}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 90b532ff1df3dea40b56dae3f8d24125, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   targets:
-  - name: Road
-    obj: {fileID: 8073929040729097281, guid: 4f7e92b5d7ef31343a1b71009d974911, type: 3}
-  - name: House
-    obj: {fileID: 4633299730165027775, guid: 563438db10138114f8aa598a5b440f5c, type: 3}
-  - name: Church
+  - name: 
+    obj: {fileID: 6464261693033896103, guid: 86319e0e493c8dd458bfb700b7e77aae, type: 3}
+  - name: 
+    obj: {fileID: 6628183077926769430, guid: e148e44647c1a68499224d36b4c511c9, type: 3}
+  - name: 
+    obj: {fileID: 2376672490801498733, guid: 29715190536444443a948d647ce88ae7, type: 3}
+  - name: 
     obj: {fileID: 8295718020759263650, guid: 4bd5371c2f39421489f7f43c54dbebb3, type: 3}
+  - name: 
+    obj: {fileID: 8073929040729097281, guid: 4f7e92b5d7ef31343a1b71009d974911, type: 3}
+  - name: 
+    obj: {fileID: 114778176416344324, guid: 563438db10138114f8aa598a5b440f5c, type: 3}
+  - name: 
+    obj: {fileID: 1835395074570721617, guid: 8f2f6bff92af70141a1e00f8a5f214d2, type: 3}
+  - name: 
+    obj: {fileID: 5087829114132359080, guid: d15f83cb2911af04c9861f144d94cdaf, type: 3}
+  - name: 
+    obj: {fileID: 3513061221777176178, guid: 1a8e1e9e7b991da4d9d65acad23bb340, type: 3}
   overlays: []
   customFolder: Resources/Sprites/Icons
   rawIcon: {fileID: 0}

@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 20e0fda110af27f46a9a58e8bc54227d, type: 3}
-  m_Name: House
+  m_Name: Brick_Wall_Straight
   m_EditorClassIdentifier: 
-  Name: House
-  Obj: {fileID: 4633299730165027775, guid: 563438db10138114f8aa598a5b440f5c, type: 3}
-  Sprite: {fileID: 21300000, guid: 5cd29a24259de0845801b9a901bf17e3, type: 3}
-  xSize: 2
-  zSize: 2
+  Name: Straight Brick Wall
+  Obj: {fileID: 6628183077926769430, guid: e148e44647c1a68499224d36b4c511c9, type: 3}
+  Sprite: {fileID: 21300000, guid: 22c8b543e1fb2744eb34bc35f5feb6a1, type: 3}
+  xSize: 1
+  zSize: 1
