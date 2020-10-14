@@ -62,8 +62,8 @@ public class CameraController : MonoBehaviour
         newZoom = cam.orthographicSize;
         zoomStep = (maxZoomSize - minZoomSize) / zoomSteps;
 
-        top = GridTransform.FromCoordsToVector3(WorldBuilder.Instance.Grid.lastNode.coords);
-        bottom = GridTransform.FromCoordsToVector3(WorldBuilder.Instance.Grid.firstNode.coords);
+        top = GridTransform.FromCoordsToVector3(WorldManager.Instance.Grid.lastNode.coords);
+        bottom = GridTransform.FromCoordsToVector3(WorldManager.Instance.Grid.firstNode.coords);
     }
 
     void Update()

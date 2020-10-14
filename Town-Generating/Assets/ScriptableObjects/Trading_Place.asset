@@ -15,5 +15,4 @@ MonoBehaviour:
   Name: Trading Place
   Obj: {fileID: 5087829114132359080, guid: d15f83cb2911af04c9861f144d94cdaf, type: 3}
   Sprite: {fileID: 21300000, guid: 44a226a9f09861b46a1f55c14c4a526a, type: 3}
-  xSize: 1
-  zSize: 1
+  Dimensions: {x: 1, y: 1}

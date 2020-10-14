@@ -16,7 +16,7 @@ public class UIManager : MonoBehaviour
     #endregion
 
     #region PRIVATE_FIELDS
-    bool isHotbarBottom = false;
+    bool isHotbarBottom = true;
     #endregion
 
     #region COMPONENTS
@@ -30,7 +30,7 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
-        builder = WorldBuilder.Instance.objectBuilder;
+        builder = WorldManager.Instance.ObjectBuilder;
         CreateObjectsUIElements();
     }
 
@@ -44,9 +44,13 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    #region Building
     public void onClick_ObjectUIElement(Transform thisTrans)
     {
-        WorldBuilder.Instance.objectBuilder.ChangeObject(thisTrans.GetSiblingIndex());
+        if (builder.NowBuildMode != BuildMode.Build)
+            builder.ChangeBuildMode(BuildMode.Build);
+
+        builder.ChangeObject(thisTrans.GetSiblingIndex());
     }
 
     public void onClick_ShowHotbar()
@@ -54,9 +58,15 @@ public class UIManager : MonoBehaviour
         isHotbarBottom = !isHotbarBottom;
         hotbarTrans.GetComponent<Animator>().SetBool("isBottom", isHotbarBottom);
 
-        if (isHotbarBottom)
-            WorldBuilder.Instance.ChangeBuildMode(BuildMode.Build);
-        else
-            WorldBuilder.Instance.ChangeBuildMode(BuildMode.Nothing);
+        //if (!isHotbarBottom)
+        //    WorldBuilder.Instance.ChangeBuildMode(BuildMode.Build);
+        //else
+        //    WorldBuilder.Instance.ChangeBuildMode(BuildMode.Nothing);
     }
+
+    public void onClick_ChangeMode(int buildMode)
+    {
+        builder.ChangeBuildMode((BuildMode)buildMode);
+    }
+    #endregion
 }

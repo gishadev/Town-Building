@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 5607062023412104466}
   - component: {fileID: 8826935039234192055}
   - component: {fileID: 6745096945281287805}
-  m_Layer: 0
+  - component: {fileID: -5324490061116171419}
+  m_Layer: 9
   m_Name: Trading_Place
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,3 +85,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &-5324490061116171419
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5087829114132359080}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0889497, y: 2.550699, z: 2.08895}
+  m_Center: {x: -0.030789375, y: 1.2753495, z: -0.030789495}

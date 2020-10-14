@@ -4,7 +4,6 @@ public class Highlight : MonoBehaviour
 {
     #region PUBLIC_FIELDS
     public GameObject highlight;
-    public Material highlightMaterial;
     #endregion
 
     #region PRIVATE_FIELDS
@@ -22,7 +21,9 @@ public class Highlight : MonoBehaviour
 
     void Start()
     {
-        ChangeHighlightModel(WorldBuilder.Instance.objectBuilder.nowObject.MeshRenderer, WorldBuilder.Instance.objectBuilder.nowObject.MeshFilter);
+        ChangeHighlightModel(
+            WorldManager.Instance.ObjectBuilder.NowObjectToBuild.MeshRenderer,
+            WorldManager.Instance.ObjectBuilder.NowObjectToBuild.MeshFilter);
     }
 
     public void Enable()

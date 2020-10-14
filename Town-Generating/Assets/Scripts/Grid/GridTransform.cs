@@ -10,7 +10,7 @@ public static class GridTransform
         int z = coords.y;
 
 
-        if (x >= 0 && x < Grid.Instance.xSize && z >= 0 && z < Grid.Instance.zSize)
+        if (x >= 0 && x < Grid.Instance.XSize && z >= 0 && z < Grid.Instance.ZSize)
             return Grid.Instance.gridOfNodes[x, z];
         else
             return null;
@@ -24,7 +24,7 @@ public static class GridTransform
         int z = coords.y;
 
 
-        if (x >= 0 && x < Grid.Instance.xSize && z >= 0 && z < Grid.Instance.zSize)
+        if (x >= 0 && x < Grid.Instance.XSize && z >= 0 && z < Grid.Instance.ZSize)
             return Grid.Instance.gridOfNodes[x, z];
         else
             return null;
@@ -54,7 +54,7 @@ public static class GridTransform
                 int x = startCoords.x + aX;
                 int z = startCoords.y + aZ;
 
-                if (x >= 0 && x < Grid.Instance.xSize && z >= 0 && z < Grid.Instance.zSize)
+                if (x >= 0 && x < Grid.Instance.XSize && z >= 0 && z < Grid.Instance.ZSize)
                     result[aX + (aZ * newXSize)] = Grid.Instance.gridOfNodes[x, z];
             }
         }
@@ -66,23 +66,23 @@ public static class GridTransform
     #region Vector3 and Coords Transformations
     public static Vector3 FromCoordsToVector3(Vector2Int coords)
     {
-        int x = Mathf.CeilToInt(coords.x - (Grid.Instance.xSize / 2f));
+        int x = Mathf.CeilToInt(coords.x - (Grid.Instance.XSize / 2f));
         float y = 0.501f;
-        int z = Mathf.CeilToInt(coords.y - (Grid.Instance.zSize / 2f));
+        int z = Mathf.CeilToInt(coords.y - (Grid.Instance.ZSize / 2f));
         return new Vector3(x, y, z);
     }
 
     public static Vector2Int FromVector3ToCoords(Vector3 position)
     {
-        int x = Mathf.FloorToInt(position.x + (Grid.Instance.xSize / 2f));
-        int z = Mathf.FloorToInt(position.z + (Grid.Instance.zSize / 2f));
+        int x = Mathf.FloorToInt(position.x + (Grid.Instance.XSize / 2f));
+        int z = Mathf.FloorToInt(position.z + (Grid.Instance.ZSize / 2f));
         return new Vector2Int(x, z);
     }
 
     public static Vector2 FromVector3ToRawCoords(Vector3 position)
     {
-        float x = position.x + (Grid.Instance.xSize / 2f);
-        float z = position.z + (Grid.Instance.zSize / 2f);
+        float x = position.x + (Grid.Instance.XSize / 2f);
+        float z = position.z + (Grid.Instance.ZSize / 2f);
         return new Vector2(x, z);
     }
 
@@ -98,7 +98,7 @@ public static class GridTransform
     #region Other
     public static bool IsBlocked(Node node)
     {
-        return node.go != null;
+        return node.obj != null;
     }
 
     public static bool IsBlocked(Node[] nodes)
@@ -106,7 +106,7 @@ public static class GridTransform
         if (nodes.Any(x => x == null))
             return true;
 
-        return nodes.Any(x => x.go != null);
+        return nodes.Any(x => x.obj != null);
     }
 
     public static Vector2 GetOffsetCoords(int xSize, int zSize)

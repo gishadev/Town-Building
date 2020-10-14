@@ -15,5 +15,4 @@ MonoBehaviour:
   Name: Church
   Obj: {fileID: 8295718020759263650, guid: 4bd5371c2f39421489f7f43c54dbebb3, type: 3}
   Sprite: {fileID: 21300000, guid: 7208dc388b3ebac41b1e87231056b547, type: 3}
-  xSize: 2
-  zSize: 3
+  Dimensions: {x: 2, y: 3}

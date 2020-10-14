@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 4290582709589912776}
   - component: {fileID: 875085536287859565}
   - component: {fileID: 3152549293912872871}
-  m_Layer: 0
+  - component: {fileID: -3237239602454491219}
+  m_Layer: 9
   m_Name: Wheat
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81,3 +82,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &-3237239602454491219
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3513061221777176178}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5195602, y: 1.7592374, z: 1.8050239}
+  m_Center: {x: 0.06737554, y: 0.6777523, z: -0.013412237}

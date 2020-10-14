@@ -9,11 +9,13 @@ public class Grid : MonoBehaviour
     #region PUBLIC_FIELDS
     public Node[,] gridOfNodes;
 
-    public int xSize;
-    public int zSize;
-
     [HideInInspector] public Node firstNode;
     [HideInInspector] public Node lastNode;
+    #endregion
+
+    #region PROPERTIES
+    public int XSize { get { return WorldManager.Instance.xSize; } }
+    public int ZSize { get { return WorldManager.Instance.zSize; } }
     #endregion
 
     void Awake()
@@ -40,7 +42,7 @@ public class Grid : MonoBehaviour
 public class Node
 {
     public Vector2Int coords;
-    public GameObject go;
+    public Object obj;
 
     public Node(Vector2Int _coords)
     {

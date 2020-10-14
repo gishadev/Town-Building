@@ -15,5 +15,4 @@ MonoBehaviour:
   Name: Wheat
   Obj: {fileID: 3513061221777176178, guid: 1a8e1e9e7b991da4d9d65acad23bb340, type: 3}
   Sprite: {fileID: 21300000, guid: 64063ed94831a2f459c2ff19800de409, type: 3}
-  xSize: 1
-  zSize: 1
+  Dimensions: {x: 1, y: 1}

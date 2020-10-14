@@ -7,10 +7,10 @@ public class ObjectData : ScriptableObject
     public string Name;
     public GameObject Obj;
     public Sprite Sprite;
-    [Header("Sizes")]
-    public int xSize;
-    public int zSize;
-
+    [Header("Dimensions")]
+    public Vector2Int Dimensions; 
+    //public int xDimension;
+    //public int zDimension;
 
     public MeshRenderer MeshRenderer
     {

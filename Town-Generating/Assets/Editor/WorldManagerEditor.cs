@@ -1,10 +1,9 @@
 ﻿using UnityEditor;
 
-[CustomEditor(typeof(Grid))]
-public class GridEditor : Editor
+[CustomEditor(typeof(WorldManager))]
+public class WorldManagerEditor : Editor
 {
-    WorldBuilder worldBuilder;
-    Grid grid;
+    WorldManager worldManager;
 
     public SerializedProperty xSize;
     public SerializedProperty zSize;
@@ -21,11 +20,10 @@ public class GridEditor : Editor
         EditorGUILayout.PropertyField(xSize);
         EditorGUILayout.PropertyField(zSize);
 
-        worldBuilder = WorldBuilder.Instance;
-        grid = (Grid)target;
+        worldManager = (WorldManager)target;
 
-        if (grid.xSize != xSize.intValue || grid.zSize != zSize.intValue)
-            worldBuilder.CreateWorld(xSize.intValue, zSize.intValue);
+        if (worldManager.xSize != xSize.intValue || worldManager.zSize != zSize.intValue)
+            worldManager.CreateWorld(xSize.intValue, zSize.intValue);
 
         serializedObject.ApplyModifiedProperties();
     }

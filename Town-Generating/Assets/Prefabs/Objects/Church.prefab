@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 8677204181781168920}
   - component: {fileID: 5747794545066036413}
   - component: {fileID: 7503194781477386359}
-  m_Layer: 0
+  - component: {fileID: 9173614026764617519}
+  m_Layer: 9
   m_Name: Church
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,3 +85,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &9173614026764617519
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8295718020759263650}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.1140275, y: 10.435856, z: 10.423258}
+  m_Center: {x: 0, y: 5.217928, z: -0.21552157}
