@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 311954283}
   m_Layer: 8
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -357,12 +357,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectsParent: {fileID: 1088663151}
   highlight: {fileID: 1834157039}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 256
-  buildingLayer:
-    serializedVersion: 2
-    m_Bits: 512
   objects:
   - {fileID: 11400000, guid: 4c466f8716cd30e42a6c7c56c181cc78, type: 2}
   - {fileID: 11400000, guid: 54e7a0167f3f3b247a6e70c7ca1b4f0a, type: 2}
@@ -374,6 +368,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6e19185bf731a4a4f8c8572516acf91d, type: 2}
   - {fileID: 11400000, guid: 9652050c5860aad46bc18edbd0af48a2, type: 2}
   blockedMaterial: {fileID: 2100000, guid: 3f97a82ce1789d3499a26bd70040e008, type: 2}
+  isEnabled: 1
 --- !u!114 &495097044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -569,6 +564,7 @@ GameObject:
   - component: {fileID: 752028801}
   - component: {fileID: 752028800}
   - component: {fileID: 752028799}
+  - component: {fileID: 752028802}
   m_Layer: 5
   m_Name: Build Mode
   m_TagString: Untagged
@@ -689,6 +685,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 752028797}
   m_CullTransparentMesh: 0
+--- !u!114 &752028802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752028797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b900c98f33d5341458d0c3fb4fd524fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &794901886
 GameObject:
   m_ObjectHideFlags: 0
@@ -1054,6 +1062,7 @@ GameObject:
   - component: {fileID: 1163112765}
   - component: {fileID: 1163112764}
   - component: {fileID: 1163112763}
+  - component: {fileID: 1163112766}
   m_Layer: 5
   m_Name: Destroy Mode
   m_TagString: Untagged
@@ -1174,6 +1183,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1163112761}
   m_CullTransparentMesh: 0
+--- !u!114 &1163112766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1163112761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b900c98f33d5341458d0c3fb4fd524fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1206954472
 GameObject:
   m_ObjectHideFlags: 0
@@ -1452,6 +1473,7 @@ GameObject:
   - component: {fileID: 1462858088}
   - component: {fileID: 1462858087}
   - component: {fileID: 1462858086}
+  - component: {fileID: 1462858089}
   m_Layer: 5
   m_Name: Hotbar
   m_TagString: Untagged
@@ -1540,6 +1562,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1462858084}
   m_CullTransparentMesh: 0
+--- !u!114 &1462858089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462858084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b900c98f33d5341458d0c3fb4fd524fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1494287916
 GameObject:
   m_ObjectHideFlags: 0
@@ -1799,6 +1833,7 @@ GameObject:
   - component: {fileID: 2119214796}
   - component: {fileID: 2119214795}
   - component: {fileID: 2119214794}
+  - component: {fileID: 2119214797}
   m_Layer: 5
   m_Name: Idle Mode
   m_TagString: Untagged
@@ -1919,3 +1954,15 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2119214792}
   m_CullTransparentMesh: 0
+--- !u!114 &2119214797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119214792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b900c98f33d5341458d0c3fb4fd524fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

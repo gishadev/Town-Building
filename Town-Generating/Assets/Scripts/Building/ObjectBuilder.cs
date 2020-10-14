@@ -8,20 +8,22 @@ public class ObjectBuilder : MonoBehaviour
     public Transform objectsParent;
     public Highlight highlight;
 
-    [Header("Layer Masks")]
-    public LayerMask groundLayer;
-    public LayerMask buildingLayer;
-
     [Header("Objects")]
     public ObjectData[] objects;
 
     [Header("Materials")]
     public Material blockedMaterial;
+
+
+    [HideInInspector] public bool isEnabled = true;
     #endregion
 
     #region PRIVATE_FIELDS
     float yRotation;
     Vector3 groundPos;
+
+    int groundLayerMask;
+    int buildingLayerMask;
 
     // Destroy Raycast.
     GameObject dr_lastObj;
@@ -49,39 +51,53 @@ public class ObjectBuilder : MonoBehaviour
     {
         ChangeObject(0);
         ChangeBuildMode(BuildMode.Nothing);
+
+        groundLayerMask = (1 << LayerMask.NameToLayer("Ground"));
+        buildingLayerMask = (1 << LayerMask.NameToLayer("Building"));
     }
 
     void Update()
     {
-        if (NowBuildMode == BuildMode.Build)
+        if (isEnabled)
         {
-            BuildRaycast();
+            if (NowBuildMode == BuildMode.Build)
+            {
+                BuildRaycast();
 
-            // Building.
-            if (Input.GetMouseButton(0))
-                if (SelectedNodes != null)
-                {
-                    BuildObject(SelectedNodes);
-                    highlight.Disable();
-                }
+                // Building.
+                if (Input.GetMouseButton(0))
+                    if (SelectedNodes != null)
+                    {
+                        BuildObject(SelectedNodes);
+                        highlight.Disable();
+                    }
 
-            // Rotation.
-            if (Input.GetKeyDown(KeyCode.R))
-                RotateObject(90f);
-            else if (Input.GetKeyDown(KeyCode.F))
-                RotateObject(-90f);
+                // Rotation.
+                if (Input.GetKeyDown(KeyCode.R))
+                    RotateObject(90f);
+                else if (Input.GetKeyDown(KeyCode.F))
+                    RotateObject(-90f);
+            }
+
+            if (NowBuildMode == BuildMode.Destroy)
+            {
+                GameObject raycastedObject = DestroyRaycast();
+
+                DestroyHighlight(raycastedObject);
+
+                if (Input.GetMouseButton(0))
+                    if (raycastedObject != null)
+                        DestroyObject(dr_lastObj);
+            }
         }
 
-        if (NowBuildMode == BuildMode.Destroy)
+        else
         {
-            GameObject raycastedObject = DestroyRaycast();
-
-            DestroyHighlight(raycastedObject);
-
-            if (Input.GetMouseButtonDown(0))
-                if (raycastedObject != null)
-                    DestroyObject(dr_lastObj);
+            highlight.Disable();
+            if (dr_lastObj != null)
+                dr_lastObj.GetComponent<Object>().ReturnDefaultMaterials();
         }
+
     }
 
     public void ChangeBuildMode(BuildMode newMode)
@@ -95,7 +111,7 @@ public class ObjectBuilder : MonoBehaviour
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hitInfo;
 
-        if (Physics.Raycast(ray, out hitInfo, groundLayer))
+        if (Physics.Raycast(ray, out hitInfo, Mathf.Infinity, groundLayerMask))
         {
             groundPos = hitInfo.point;
 
@@ -132,6 +148,7 @@ public class ObjectBuilder : MonoBehaviour
 
                 OldNodes = SelectedNodes;
             }
+
         }
 
         else
@@ -175,12 +192,9 @@ public class ObjectBuilder : MonoBehaviour
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hitInfo;
 
-        if (Physics.Raycast(ray, out hitInfo, buildingLayer))
+        if (Physics.Raycast(ray, out hitInfo, Mathf.Infinity, buildingLayerMask))
         {
-            if (hitInfo.collider.CompareTag("Building"))
-            {
-                return hitInfo.collider.gameObject;
-            }
+            return hitInfo.collider.gameObject;
         }
 
         return null;

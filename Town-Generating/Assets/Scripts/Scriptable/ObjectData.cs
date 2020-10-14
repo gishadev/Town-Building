@@ -7,24 +7,25 @@ public class ObjectData : ScriptableObject
     public string Name;
     public GameObject Obj;
     public Sprite Sprite;
-    [Header("Dimensions")]
-    public Vector2Int Dimensions; 
-    //public int xDimension;
-    //public int zDimension;
 
-    public MeshRenderer MeshRenderer
+    public Vector2Int Dimensions
     {
         get
         {
-            return Obj.GetComponent<MeshRenderer>();
+            int x = Mathf.RoundToInt((MeshFilter.sharedMesh.bounds.max.x - MeshFilter.sharedMesh.bounds.min.x) * Obj.transform.localScale.x);
+            int z = Mathf.RoundToInt((MeshFilter.sharedMesh.bounds.max.z - MeshFilter.sharedMesh.bounds.min.z) * Obj.transform.localScale.z);
+
+            return new Vector2Int(x, z);
         }
+    }
+
+    public MeshRenderer MeshRenderer
+    {
+        get => Obj.GetComponent<MeshRenderer>();
     }
 
     public MeshFilter MeshFilter
     {
-        get
-        {
-            return Obj.GetComponent<MeshFilter>();
-        }
+        get => Obj.GetComponent<MeshFilter>();
     }
 }
