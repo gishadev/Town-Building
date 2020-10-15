@@ -15,4 +15,14 @@ MonoBehaviour:
   Name: Church
   Obj: {fileID: 8295718020759263650, guid: 4bd5371c2f39421489f7f43c54dbebb3, type: 3}
   Sprite: {fileID: 21300000, guid: 7208dc388b3ebac41b1e87231056b547, type: 3}
-  Dimensions: {x: 2, y: 3}
+  palettes:
+  - materials:
+    - {fileID: -8848810374240701247, guid: a24922ddfc626b44aa7fa0163c3a1fa3, type: 3}
+    - {fileID: -382652638819485698, guid: a24922ddfc626b44aa7fa0163c3a1fa3, type: 3}
+    - {fileID: 2100000, guid: 13c6fa82ed79db54abe16a13be9b6c53, type: 2}
+    - {fileID: 2100000, guid: 390b73229154dd347b483c5a7d438e1d, type: 2}
+  - materials:
+    - {fileID: -382652638819485698, guid: a24922ddfc626b44aa7fa0163c3a1fa3, type: 3}
+    - {fileID: -8848810374240701247, guid: a24922ddfc626b44aa7fa0163c3a1fa3, type: 3}
+    - {fileID: 2100000, guid: 13c6fa82ed79db54abe16a13be9b6c53, type: 2}
+    - {fileID: 2100000, guid: 390b73229154dd347b483c5a7d438e1d, type: 2}

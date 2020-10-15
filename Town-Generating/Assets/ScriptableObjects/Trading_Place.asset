@@ -15,4 +15,19 @@ MonoBehaviour:
   Name: Trading Place
   Obj: {fileID: 5087829114132359080, guid: d15f83cb2911af04c9861f144d94cdaf, type: 3}
   Sprite: {fileID: 21300000, guid: 44a226a9f09861b46a1f55c14c4a526a, type: 3}
-  Dimensions: {x: 1, y: 1}
+  palettes:
+  - materials:
+    - {fileID: -1444460858095362738, guid: 103dccfa32d08d24d8fdbf6b9a0b7d3e, type: 3}
+    - {fileID: 2100000, guid: b3456a630687db44ca12e89b77916186, type: 2}
+    - {fileID: 2100000, guid: b83d77d1853cd544f80eaa49d08dec4a, type: 2}
+    - {fileID: 2100000, guid: 89d93eed8b998884bb27812d4aede25c, type: 2}
+  - materials:
+    - {fileID: -1444460858095362738, guid: 103dccfa32d08d24d8fdbf6b9a0b7d3e, type: 3}
+    - {fileID: 2100000, guid: b3456a630687db44ca12e89b77916186, type: 2}
+    - {fileID: 2100000, guid: 926c5309a4286cd40a797086e91ba0fd, type: 2}
+    - {fileID: 2100000, guid: 89d93eed8b998884bb27812d4aede25c, type: 2}
+  - materials:
+    - {fileID: -1444460858095362738, guid: 103dccfa32d08d24d8fdbf6b9a0b7d3e, type: 3}
+    - {fileID: 2100000, guid: b3456a630687db44ca12e89b77916186, type: 2}
+    - {fileID: 2100000, guid: f92d4e01172686b4fad2ae7dc25e448c, type: 2}
+    - {fileID: 2100000, guid: 89d93eed8b998884bb27812d4aede25c, type: 2}

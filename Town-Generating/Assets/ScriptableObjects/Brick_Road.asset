@@ -15,4 +15,6 @@ MonoBehaviour:
   Name: Brick Road
   Obj: {fileID: 6464261693033896103, guid: 86319e0e493c8dd458bfb700b7e77aae, type: 3}
   Sprite: {fileID: 21300000, guid: 70afbc965365d9b43974408098ef647e, type: 3}
-  Dimensions: {x: 1, y: 1}
+  palettes:
+  - materials:
+    - {fileID: 2100000, guid: 526b659c23d39624b859ab5d48ab7a58, type: 2}

@@ -3,7 +3,8 @@
 public class Object : MonoBehaviour
 {
     #region PUBLIC_FIELDS
-     public Material[] defaultMaterials;
+    public ObjectData thisObjectData;
+    public Palette defaultPalette;
     #endregion
 
     #region COMPONENTS
@@ -15,8 +16,15 @@ public class Object : MonoBehaviour
         meshRenderer = GetComponent<MeshRenderer>();
     }
 
-    public void ReturnDefaultMaterials()
+    public void SetRandomPalette()
     {
-        meshRenderer.sharedMaterials = defaultMaterials;
+        defaultPalette = thisObjectData.palettes[Random.Range(0, thisObjectData.palettes.Length)];
+
+        ApplyDefaultMaterials();
+    }
+
+    public void ApplyDefaultMaterials()
+    {
+        meshRenderer.sharedMaterials = defaultPalette.materials;
     }
 }

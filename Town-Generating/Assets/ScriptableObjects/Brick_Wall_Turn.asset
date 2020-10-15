@@ -15,4 +15,7 @@ MonoBehaviour:
   Name: Turn Brick Wall
   Obj: {fileID: 2376672490801498733, guid: 29715190536444443a948d647ce88ae7, type: 3}
   Sprite: {fileID: 21300000, guid: 6a5da17e37ee11f44bb58599d7f57161, type: 3}
-  Dimensions: {x: 1, y: 1}
+  palettes:
+  - materials:
+    - {fileID: 2100000, guid: 526b659c23d39624b859ab5d48ab7a58, type: 2}
+    - {fileID: -1444460858095362738, guid: 103dccfa32d08d24d8fdbf6b9a0b7d3e, type: 3}

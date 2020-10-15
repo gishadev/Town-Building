@@ -9,11 +9,11 @@ public class ObjectBuilder : MonoBehaviour
     public Highlight highlight;
 
     [Header("Objects")]
-    public ObjectData[] objects;
+    //public ObjectData[] objects;
+    public ObjectCategory[] objectCategories;
 
     [Header("Materials")]
     public Material blockedMaterial;
-
 
     [HideInInspector] public bool isEnabled = true;
     #endregion
@@ -31,6 +31,7 @@ public class ObjectBuilder : MonoBehaviour
 
     #region PROPERTIES
     public ObjectData NowObjectToBuild { private set; get; }
+    public ObjectCategory NowObjectCategory { private set; get; }
     public BuildMode NowBuildMode { private set; get; }
     public Node[] SelectedNodes { private set; get; }
     public Node[] OldNodes { private set; get; }
@@ -49,6 +50,7 @@ public class ObjectBuilder : MonoBehaviour
 
     void Start()
     {
+        ChangeCategory(0);
         ChangeObject(0);
         ChangeBuildMode(BuildMode.Nothing);
 
@@ -95,7 +97,7 @@ public class ObjectBuilder : MonoBehaviour
         {
             highlight.Disable();
             if (dr_lastObj != null)
-                dr_lastObj.GetComponent<Object>().ReturnDefaultMaterials();
+                dr_lastObj.GetComponent<Object>().ApplyDefaultMaterials();
         }
 
     }
@@ -168,7 +170,8 @@ public class ObjectBuilder : MonoBehaviour
             Vector3 position = GridTransform.CenterVector3FromCoords(aNode.coords, bNode.coords);
 
             Object o = GameObject.Instantiate(NowObjectToBuild.Obj, position, GetRotation(), objectsParent).AddComponent<Object>();
-            o.defaultMaterials = NowObjectToBuild.MeshRenderer.sharedMaterials;
+            o.thisObjectData = NowObjectToBuild;
+            o.SetRandomPalette();
             foreach (Node n in nodes)
                 n.obj = o;
         }
@@ -176,8 +179,13 @@ public class ObjectBuilder : MonoBehaviour
 
     public void ChangeObject(int index)
     {
-        NowObjectToBuild = objects[index];
+        NowObjectToBuild = NowObjectCategory.objectsData[index];
         highlight.ChangeHighlightModel(NowObjectToBuild.MeshRenderer, NowObjectToBuild.MeshFilter);
+    }
+
+    public void ChangeCategory(int index)
+    {
+        NowObjectCategory = objectCategories[index];
     }
     #endregion
 
@@ -220,7 +228,7 @@ public class ObjectBuilder : MonoBehaviour
             // Returning default materials.
             if (dr_lastObj != raycastedObject)
             {
-                dr_lastObj.GetComponent<Object>().ReturnDefaultMaterials();
+                dr_lastObj.GetComponent<Object>().ApplyDefaultMaterials();
                 dr_lastObj = raycastedObject;
             }
         }
@@ -230,7 +238,7 @@ public class ObjectBuilder : MonoBehaviour
             // Returning default materials.
             if (dr_lastObj != null)
                 if (dr_lastObj != raycastedObject)
-                    dr_lastObj.GetComponent<Object>().ReturnDefaultMaterials();
+                    dr_lastObj.GetComponent<Object>().ApplyDefaultMaterials();
         }
     }
     #endregion
@@ -280,4 +288,11 @@ public enum BuildMode
     Nothing,
     Build,
     Destroy
+}
+
+[System.Serializable]
+public class ObjectCategory
+{
+    public string Name;
+    public ObjectData[] objectsData;
 }

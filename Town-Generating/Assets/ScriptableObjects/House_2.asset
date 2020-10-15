@@ -15,4 +15,16 @@ MonoBehaviour:
   Name: House 2
   Obj: {fileID: 1835395074570721617, guid: 8f2f6bff92af70141a1e00f8a5f214d2, type: 3}
   Sprite: {fileID: 21300000, guid: b6c20e0219285dd488d27babde4d9998, type: 3}
-  Dimensions: {x: 2, y: 2}
+  palettes:
+  - materials:
+    - {fileID: -1444460858095362738, guid: 103dccfa32d08d24d8fdbf6b9a0b7d3e, type: 3}
+    - {fileID: -8848810374240701247, guid: a24922ddfc626b44aa7fa0163c3a1fa3, type: 3}
+    - {fileID: -382652638819485698, guid: 103dccfa32d08d24d8fdbf6b9a0b7d3e, type: 3}
+    - {fileID: -400310251153081761, guid: a24922ddfc626b44aa7fa0163c3a1fa3, type: 3}
+    - {fileID: 8556262120643298411, guid: a24922ddfc626b44aa7fa0163c3a1fa3, type: 3}
+  - materials:
+    - {fileID: -1444460858095362738, guid: 103dccfa32d08d24d8fdbf6b9a0b7d3e, type: 3}
+    - {fileID: -382652638819485698, guid: a24922ddfc626b44aa7fa0163c3a1fa3, type: 3}
+    - {fileID: -8848810374240701247, guid: a24922ddfc626b44aa7fa0163c3a1fa3, type: 3}
+    - {fileID: -400310251153081761, guid: a24922ddfc626b44aa7fa0163c3a1fa3, type: 3}
+    - {fileID: 8556262120643298411, guid: a24922ddfc626b44aa7fa0163c3a1fa3, type: 3}

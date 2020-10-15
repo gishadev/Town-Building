@@ -15,4 +15,6 @@ MonoBehaviour:
   Name: Dirt Road
   Obj: {fileID: 8073929040729097281, guid: 4f7e92b5d7ef31343a1b71009d974911, type: 3}
   Sprite: {fileID: 21300000, guid: 7bc5d5654032cb8478cb63b24187700f, type: 3}
-  Dimensions: {x: 1, y: 1}
+  palettes:
+  - materials:
+    - {fileID: 2100000, guid: 13c6fa82ed79db54abe16a13be9b6c53, type: 2}

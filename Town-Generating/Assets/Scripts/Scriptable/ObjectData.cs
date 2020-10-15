@@ -8,6 +8,10 @@ public class ObjectData : ScriptableObject
     public GameObject Obj;
     public Sprite Sprite;
 
+    [Header("Palettes")]
+    public Palette[] palettes;
+
+    #region PROPERTIES
     public Vector2Int Dimensions
     {
         get
@@ -28,4 +32,11 @@ public class ObjectData : ScriptableObject
     {
         get => Obj.GetComponent<MeshFilter>();
     }
+    #endregion
+}
+
+[System.Serializable]
+public class Palette
+{
+    public Material[] materials;
 }

@@ -15,4 +15,7 @@ MonoBehaviour:
   Name: Straight Brick Wall
   Obj: {fileID: 6628183077926769430, guid: e148e44647c1a68499224d36b4c511c9, type: 3}
   Sprite: {fileID: 21300000, guid: c38f83eda3d36a641ac9f783ba7fce42, type: 3}
-  Dimensions: {x: 1, y: 1}
+  palettes:
+  - materials:
+    - {fileID: 2100000, guid: 526b659c23d39624b859ab5d48ab7a58, type: 2}
+    - {fileID: -1444460858095362738, guid: 103dccfa32d08d24d8fdbf6b9a0b7d3e, type: 3}
