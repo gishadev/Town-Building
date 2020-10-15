@@ -98,10 +98,5 @@ public class UIManager : MonoBehaviour
         //else
         //    WorldBuilder.Instance.ChangeBuildMode(BuildMode.Nothing);
     }
-
-    public void onClick_ChangeMode(int buildMode)
-    {
-        builder.ChangeBuildMode((BuildMode)buildMode);
-    }
     #endregion
 }
