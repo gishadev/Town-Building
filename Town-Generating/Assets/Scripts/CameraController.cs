@@ -31,6 +31,7 @@ public class CameraController : MonoBehaviour
     Vector3 rotateCurrentPos;
 
     // Inputs //
+    bool isLargeView;
     // Vector3 movementInput;
     // float rotationInput;
 
@@ -69,15 +70,21 @@ public class CameraController : MonoBehaviour
     void Update()
     {
         MouseRotation();
-        MouseMovement();
-
         KeyboardRotation();
-        KeyboardMovement();
 
-        transform.position = Vector3.Lerp(transform.position, newPos, Time.deltaTime * movementSmoothness);
+        if (!isLargeView)
+        {
+            MouseMovement();
+            KeyboardMovement();
+
+            Zoom();
+            transform.position = Vector3.Lerp(transform.position, newPos, Time.deltaTime * movementSmoothness);
+        }
+
+        
         transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, Time.deltaTime * rotationSmoothness);
 
-        Zoom();
+        LargeView();
     }
 
     #region Keyboard
@@ -105,8 +112,6 @@ public class CameraController : MonoBehaviour
         newPos += h + f;
         newPos.x = Mathf.Clamp(newPos.x, bottom.x, top.x);
         newPos.z = Mathf.Clamp(newPos.z, bottom.z, top.z);
-
-
     }
     #endregion
 
@@ -165,14 +170,39 @@ public class CameraController : MonoBehaviour
     {
         float zoom;
         if (Input.mouseScrollDelta.y > 0f)
+        {
             zoom = -zoomStep;
+            isLargeView = false;
+        }
         else if (Input.mouseScrollDelta.y < 0f)
+        {
             zoom = zoomStep;
+            isLargeView = false;
+        }
         else
             zoom = 0f;
 
         newZoom = Mathf.Clamp(zoom + newZoom, minZoomSize, maxZoomSize);
         cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, newZoom, Time.deltaTime * zoomSmoothness);
+    }
+
+    void LargeView()
+    {
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            if (!isLargeView)
+            {
+                isLargeView = true;
+                newZoom = WorldManager.Instance.xSize / 2f;
+                cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, newZoom, Time.deltaTime * zoomSmoothness * 10f);
+                transform.position = Vector3.zero;
+            }
+            else
+                isLargeView = false;
+        }
+
+        if (isLargeView && Mathf.Abs(Input.mouseScrollDelta.y) > 0f)
+            isLargeView = false;
     }
     #endregion
 }
