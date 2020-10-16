@@ -15,7 +15,7 @@ ModelImporter:
       name: Wood
     second: {fileID: 2100000, guid: 765330e4a7a804a42a4b9724420e4e0c, type: 2}
   materials:
-    materialImportMode: 2
+    materialImportMode: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1

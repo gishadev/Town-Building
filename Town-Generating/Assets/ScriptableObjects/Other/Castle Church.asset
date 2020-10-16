@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20e0fda110af27f46a9a58e8bc54227d, type: 3}
+  m_Name: Castle Church
+  m_EditorClassIdentifier: 
+  Name: Church
+  Obj: {fileID: 290092709674975030, guid: d6a97c419fbeb854bbb3d9575f39f0fd, type: 3}
+  Sprite: {fileID: 21300000, guid: 503dcbdcf9015e0478ad12a511556f70, type: 3}
+  palettes:
+  - materials:
+    - {fileID: 2100000, guid: 2cfa2a77877c83f4788982156ceb063e, type: 2}
+    - {fileID: 2100000, guid: ab14d59a68ef06c479e01b7731f0006e, type: 2}
+    - {fileID: 2100000, guid: 765330e4a7a804a42a4b9724420e4e0c, type: 2}
+    - {fileID: 2100000, guid: 8c9b9ac42049d374080ee6423f9203a9, type: 2}

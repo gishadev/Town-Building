@@ -1,17 +1,42 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 [CreateAssetMenu(fileName = "Object", menuName = "Scriptable Objects/Object")]
 public class ObjectData : ScriptableObject
 {
+    #region PUBLIC_FIELDS
     [Header("Main")]
     public string Name;
     public GameObject Obj;
     public Sprite Sprite;
 
     [Header("Palettes")]
-    public Palette[] palettes;
+    public List<Palette> palettes = new List<Palette>();
+    #endregion
+
+    #region PRIVATE_FIELDS
+    bool isStaticPalette = false;
+    #endregion
 
     #region PROPERTIES
+    public bool IsStaticPalette
+    {
+        get => isStaticPalette;
+
+        set
+        {
+            if (value)
+            {
+                palettes.Clear();
+                RestoreDefaultPalette();
+            }
+
+
+
+            isStaticPalette = value;
+        }
+    }
+
     public Vector2Int Dimensions
     {
         get
@@ -31,6 +56,20 @@ public class ObjectData : ScriptableObject
     public MeshFilter MeshFilter
     {
         get => Obj.GetComponent<MeshFilter>();
+    }
+    #endregion
+
+    #region METHODS
+    public void RestoreDefaultPalette()
+    {
+        Palette firstPalette = new Palette();
+
+        if (palettes != null && palettes.Count > 0)
+            firstPalette = palettes[0];
+        else
+            palettes.Add(firstPalette);
+        
+        firstPalette.materials = MeshRenderer.sharedMaterials;
     }
     #endregion
 }

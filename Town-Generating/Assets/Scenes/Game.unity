@@ -25,7 +25,7 @@ RenderSettings:
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 0
-  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
+  m_SubtractiveShadowColor: {r: 0.58686364, g: 0.6450492, b: 0.7924528, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
@@ -405,15 +405,22 @@ MonoBehaviour:
     - {fileID: 11400000, guid: e4d840c2d0b36f54297da0ae5e7a5d91, type: 2}
   - Name: Living Space
     objectsData:
+    - {fileID: 11400000, guid: 0a3177979a3e3374da66ba09f2a30c62, type: 2}
+    - {fileID: 11400000, guid: e389d6dc431435c4cb6ee8419728fc52, type: 2}
     - {fileID: 11400000, guid: 67b1f397e5720db45ba1c1dc7e0692e6, type: 2}
     - {fileID: 11400000, guid: 57945b33665f93448b9a88d2d1e9a6b0, type: 2}
   - Name: Walls
     objectsData:
+    - {fileID: 11400000, guid: 9b6d070f2b0353c43ac0b887866c075b, type: 2}
     - {fileID: 11400000, guid: 54e7a0167f3f3b247a6e70c7ca1b4f0a, type: 2}
     - {fileID: 11400000, guid: b56f248d76f9fe741b55f139426c0ccd, type: 2}
+    - {fileID: 11400000, guid: 0631c630305401a48bf8935bdab2b734, type: 2}
   - Name: Other
     objectsData:
+    - {fileID: 11400000, guid: a2c0387b6329abb4ebe0cf790ae42354, type: 2}
+    - {fileID: 11400000, guid: 21169831dfccf4e4a812a35566be5621, type: 2}
     - {fileID: 11400000, guid: d9225721409d6c64889ed4481cf30848, type: 2}
+    - {fileID: 11400000, guid: 86861c11d9156654e9f7e42c194a7332, type: 2}
     - {fileID: 11400000, guid: 6e19185bf731a4a4f8c8572516acf91d, type: 2}
     - {fileID: 11400000, guid: 9652050c5860aad46bc18edbd0af48a2, type: 2}
   blockedMaterial: {fileID: 2100000, guid: 3f97a82ce1789d3499a26bd70040e008, type: 2}
@@ -462,8 +469,8 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 0.9
+  m_Color: {r: 0.8867924, g: 0.8867924, b: 0.8867924, a: 1}
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -472,7 +479,7 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.5
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
@@ -502,7 +509,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -521,7 +528,7 @@ Transform:
   m_GameObject: {fileID: 705507993}
   m_LocalRotation: {x: 0.39044833, y: 0.34682897, z: -0.161729, w: 0.8373192}
   m_LocalPosition: {x: 0, y: 15, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 0.56965}
   m_Children: []
   m_Father: {fileID: 1247046793}
   m_RootOrder: 1
@@ -1019,6 +1026,7 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1091,6 +1099,37 @@ Transform:
   m_Father: {fileID: 1247046793}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
+--- !u!114 &963194229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &1088663150
 GameObject:
   m_ObjectHideFlags: 0
@@ -1871,6 +1910,20 @@ MonoBehaviour:
     obj: {fileID: 5087829114132359080, guid: d15f83cb2911af04c9861f144d94cdaf, type: 3}
   - name: 
     obj: {fileID: 3513061221777176178, guid: 1a8e1e9e7b991da4d9d65acad23bb340, type: 3}
+  - name: 
+    obj: {fileID: 2222458157158636004, guid: 835f4f880e7983a4d80c255d0bf40caf, type: 3}
+  - name: 
+    obj: {fileID: 1391663480350648966, guid: 3aa65e5235fa86448af69ed7ecc585e4, type: 3}
+  - name: 
+    obj: {fileID: 4062785176205428289, guid: 9ce74590c4aa2914f962b649b578bb14, type: 3}
+  - name: 
+    obj: {fileID: 290092709674975030, guid: d6a97c419fbeb854bbb3d9575f39f0fd, type: 3}
+  - name: 
+    obj: {fileID: 3644745353164820874, guid: 65c351daff157a844aa1c764888c3ec9, type: 3}
+  - name: 
+    obj: {fileID: 5155096832446107364, guid: 15b0bbf2e1880c24285395f6a37532a3, type: 3}
+  - name: 
+    obj: {fileID: 7075091399089151753, guid: 65d1432d70c717a4b9e53137b03940a3, type: 3}
   overlays: []
   customFolder: Resources/Sprites/Icons
   rawIcon: {fileID: 0}

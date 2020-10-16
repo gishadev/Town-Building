@@ -18,7 +18,10 @@ public class Object : MonoBehaviour
 
     public void SetRandomPalette()
     {
-        defaultPalette = thisObjectData.palettes[Random.Range(0, thisObjectData.palettes.Length)];
+        if (!thisObjectData.IsStaticPalette)
+            defaultPalette = thisObjectData.palettes[Random.Range(0, thisObjectData.palettes.Count)];
+        else
+            defaultPalette = thisObjectData.palettes[0];
 
         ApplyDefaultMaterials();
     }
