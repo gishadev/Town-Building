@@ -140,7 +140,7 @@ public class ObjectBuilder : MonoBehaviour
                 {
                     Vector3 position = GridTransform.CenterVector3FromCoords(aNode.coords, bNode.coords);
 
-                    if (!GridTransform.IsBlocked(SelectedNodes))
+                    if (!GridTransform.IsBlocked(SelectedNodes, NowObjectToBuild.ObjType))
                         highlight.PlaceHighlight(position, rotation);
                     else
                         highlight.PlaceHighlight(position, rotation, blockedMaterial);
@@ -163,7 +163,7 @@ public class ObjectBuilder : MonoBehaviour
 
     public void BuildObject(Node[] nodes)
     {
-        if (!GridTransform.IsBlocked(nodes))
+        if (!GridTransform.IsBlocked(nodes, NowObjectToBuild.ObjType))
         {
             Node aNode = nodes.First();
             Node bNode = nodes.Last();
@@ -173,7 +173,13 @@ public class ObjectBuilder : MonoBehaviour
             o.thisObjectData = NowObjectToBuild;
             o.SetRandomPalette();
             foreach (Node n in nodes)
-                n.obj = o;
+            {
+                if (o.thisObjectData.ObjType == ObjectType.Building)
+                    n.building = o;
+                else if (o.thisObjectData.ObjType == ObjectType.Flooring)
+                    n.flooring = o;
+            }
+
         }
     }
 

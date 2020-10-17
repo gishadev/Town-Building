@@ -41,6 +41,11 @@ public class ObjectDataEditor : Editor
         GUILayout.EndHorizontal();
 
         GUILayout.BeginHorizontal(field);
+        GUILayout.Label("Object Type", GUILayout.Width(EditorGUIUtility.labelWidth));
+        data.ObjType = (ObjectType)EditorGUILayout.EnumPopup(data.ObjType);
+        GUILayout.EndHorizontal();
+
+        GUILayout.BeginHorizontal(field);
         GUILayout.Label("Object Prefab", GUILayout.Width(EditorGUIUtility.labelWidth));
         data.Obj = (GameObject)EditorGUILayout.ObjectField(data.Obj, typeof(GameObject), false);
         GUILayout.EndHorizontal();

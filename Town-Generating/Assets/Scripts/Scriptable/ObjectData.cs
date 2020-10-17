@@ -7,15 +7,12 @@ public class ObjectData : ScriptableObject
     #region PUBLIC_FIELDS
     [Header("Main")]
     public string Name;
+    public ObjectType ObjType;
     public GameObject Obj;
     public Sprite Sprite;
 
     [Header("Palettes")]
     public List<Palette> palettes = new List<Palette>();
-    #endregion
-
-    #region PRIVATE_FIELDS
-    bool isStaticPalette = false;
     #endregion
 
     #region PROPERTIES
@@ -31,11 +28,11 @@ public class ObjectData : ScriptableObject
                 RestoreDefaultPalette();
             }
 
-
-
             isStaticPalette = value;
         }
     }
+
+    [HideInInspector] public bool isStaticPalette = false;
 
     public Vector2Int Dimensions
     {
@@ -72,6 +69,12 @@ public class ObjectData : ScriptableObject
         firstPalette.materials = MeshRenderer.sharedMaterials;
     }
     #endregion
+}
+
+public enum ObjectType
+{
+    Building,
+    Flooring
 }
 
 [System.Serializable]

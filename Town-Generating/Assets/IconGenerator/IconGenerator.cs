@@ -14,7 +14,7 @@ public class IconGenerator : MonoBehaviour {
 
 	[Header("Prefabs")]
     [Tooltip("IconGenerator will generate icons from these prefabs / objects")]
-    public Target[] targets;
+    public GameObject[] targets;
     [Tooltip("These images will be applied to EVERY icon generated. Higher index = on top")]
     public Sprite[] overlays;
 
@@ -49,15 +49,15 @@ public class IconGenerator : MonoBehaviour {
             return;
         }
 
-        foreach (Target target in targets)
+        foreach (GameObject target in targets)
 		{
-            if (target.obj == null)
+            if (target == null)
             {
                 // Skip the object.
                 continue;
             }
 
-            GameObject targetObj = target.obj;
+            GameObject targetObj = target;
 
 			rawIcon = AssetPreview.GetAssetPreview (targetObj);
 			icon = rawIcon as Texture2D;
@@ -72,15 +72,15 @@ public class IconGenerator : MonoBehaviour {
 
                 icon = GetFinalTexture(icon, targetCount);
             }
-            else
-            {
-                // Check the icon.
-                if (icon == null)
-                {
-                    Debug.LogError("There was an error generating image from " + targetObj.name + "! Are you sure this is an 3D object?");
-                    continue;
-                }
-            }
+            //else
+            //{
+            //    // Check the icon.
+            //    if (icon == null)
+            //    {
+            //        Debug.LogError("There was an error generating image from " + targetObj.name + "! Are you sure this is an 3D object?");
+            //        continue;
+            //    }
+            //}
 
             //TextureScale.Point(icon, 512, 512); // Used for rescaling the final icon
             byte[] bytes = icon.EncodeToPNG ();
@@ -187,11 +187,11 @@ public class IconGenerator : MonoBehaviour {
     }
 }
 
-[System.Serializable]
-public class Target
-{
-    [Header("If the name value is empty, prefab name will be used as the filename!")]
-    public string name;
-    public GameObject obj;
-}
+//[System.Serializable]
+//public class Target
+//{
+//    [Header("If the name value is empty, prefab name will be used as the filename!")]
+//    public string name;
+//    public GameObject obj;
+//}
 #endif

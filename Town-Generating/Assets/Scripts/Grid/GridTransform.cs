@@ -96,17 +96,36 @@ public static class GridTransform
     #endregion
 
     #region Other
-    public static bool IsBlocked(Node node)
+    public static bool IsBlocked(Node node, ObjectType objType)
     {
-        return node.obj != null;
-    }
-
-    public static bool IsBlocked(Node[] nodes)
-    {
-        if (nodes.Any(x => x == null))
+        if (node == null)
             return true;
 
-        return nodes.Any(x => x.obj != null);
+        if (objType == ObjectType.Building)
+            return node.building != null;
+        else if (objType == ObjectType.Flooring)
+            return node.flooring != null;
+        else
+        {
+            Debug.LogError("Object Type wasn't found! Please, check the script.");
+            return true;
+        }
+    }
+
+    public static bool IsBlocked(Node[] nodes, ObjectType objType)
+    {
+        foreach (Node n in nodes)
+        {
+            if (IsBlocked(n, objType))
+                return true;
+        }
+
+        return false;
+
+        //if (nodes.Any(x => x == null))
+        //    return true;
+
+        //return nodes.Any(x => x.obj != null);
     }
 
     public static Vector2 GetOffsetCoords(int xSize, int zSize)

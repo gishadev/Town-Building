@@ -42,7 +42,7 @@ public class Grid : MonoBehaviour
 public class Node
 {
     public Vector2Int coords;
-    public Object obj;
+    public Object building, flooring;
 
     public Node(Vector2Int _coords)
     {

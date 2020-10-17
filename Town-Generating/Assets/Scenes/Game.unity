@@ -405,8 +405,6 @@ MonoBehaviour:
     - {fileID: 11400000, guid: e4d840c2d0b36f54297da0ae5e7a5d91, type: 2}
   - Name: Living Space
     objectsData:
-    - {fileID: 11400000, guid: 0a3177979a3e3374da66ba09f2a30c62, type: 2}
-    - {fileID: 11400000, guid: e389d6dc431435c4cb6ee8419728fc52, type: 2}
     - {fileID: 11400000, guid: 67b1f397e5720db45ba1c1dc7e0692e6, type: 2}
     - {fileID: 11400000, guid: 57945b33665f93448b9a88d2d1e9a6b0, type: 2}
   - Name: Walls
@@ -417,8 +415,6 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 0631c630305401a48bf8935bdab2b734, type: 2}
   - Name: Other
     objectsData:
-    - {fileID: 11400000, guid: a2c0387b6329abb4ebe0cf790ae42354, type: 2}
-    - {fileID: 11400000, guid: 21169831dfccf4e4a812a35566be5621, type: 2}
     - {fileID: 11400000, guid: d9225721409d6c64889ed4481cf30848, type: 2}
     - {fileID: 11400000, guid: 86861c11d9156654e9f7e42c194a7332, type: 2}
     - {fileID: 11400000, guid: 6e19185bf731a4a4f8c8572516acf91d, type: 2}
@@ -1878,7 +1874,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1494287917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1892,38 +1888,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targets:
-  - name: 
-    obj: {fileID: 6464261693033896103, guid: 86319e0e493c8dd458bfb700b7e77aae, type: 3}
-  - name: 
-    obj: {fileID: 6628183077926769430, guid: e148e44647c1a68499224d36b4c511c9, type: 3}
-  - name: 
-    obj: {fileID: 2376672490801498733, guid: 29715190536444443a948d647ce88ae7, type: 3}
-  - name: 
-    obj: {fileID: 8295718020759263650, guid: 4bd5371c2f39421489f7f43c54dbebb3, type: 3}
-  - name: 
-    obj: {fileID: 8073929040729097281, guid: 4f7e92b5d7ef31343a1b71009d974911, type: 3}
-  - name: 
-    obj: {fileID: 114778176416344324, guid: 563438db10138114f8aa598a5b440f5c, type: 3}
-  - name: 
-    obj: {fileID: 1835395074570721617, guid: 8f2f6bff92af70141a1e00f8a5f214d2, type: 3}
-  - name: 
-    obj: {fileID: 5087829114132359080, guid: d15f83cb2911af04c9861f144d94cdaf, type: 3}
-  - name: 
-    obj: {fileID: 3513061221777176178, guid: 1a8e1e9e7b991da4d9d65acad23bb340, type: 3}
-  - name: 
-    obj: {fileID: 2222458157158636004, guid: 835f4f880e7983a4d80c255d0bf40caf, type: 3}
-  - name: 
-    obj: {fileID: 1391663480350648966, guid: 3aa65e5235fa86448af69ed7ecc585e4, type: 3}
-  - name: 
-    obj: {fileID: 4062785176205428289, guid: 9ce74590c4aa2914f962b649b578bb14, type: 3}
-  - name: 
-    obj: {fileID: 290092709674975030, guid: d6a97c419fbeb854bbb3d9575f39f0fd, type: 3}
-  - name: 
-    obj: {fileID: 3644745353164820874, guid: 65c351daff157a844aa1c764888c3ec9, type: 3}
-  - name: 
-    obj: {fileID: 5155096832446107364, guid: 15b0bbf2e1880c24285395f6a37532a3, type: 3}
-  - name: 
-    obj: {fileID: 7075091399089151753, guid: 65d1432d70c717a4b9e53137b03940a3, type: 3}
+  - {fileID: 8295718020759263650, guid: 4bd5371c2f39421489f7f43c54dbebb3, type: 3}
+  - {fileID: 8073929040729097281, guid: 4f7e92b5d7ef31343a1b71009d974911, type: 3}
+  - {fileID: 114778176416344324, guid: 563438db10138114f8aa598a5b440f5c, type: 3}
+  - {fileID: 1835395074570721617, guid: 8f2f6bff92af70141a1e00f8a5f214d2, type: 3}
+  - {fileID: 7075091399089151753, guid: 65d1432d70c717a4b9e53137b03940a3, type: 3}
+  - {fileID: 5087829114132359080, guid: d15f83cb2911af04c9861f144d94cdaf, type: 3}
+  - {fileID: 3513061221777176178, guid: 1a8e1e9e7b991da4d9d65acad23bb340, type: 3}
+  - {fileID: 6464261693033896103, guid: 86319e0e493c8dd458bfb700b7e77aae, type: 3}
+  - {fileID: 1391663480350648966, guid: 3aa65e5235fa86448af69ed7ecc585e4, type: 3}
+  - {fileID: 4062785176205428289, guid: 9ce74590c4aa2914f962b649b578bb14, type: 3}
+  - {fileID: 6628183077926769430, guid: e148e44647c1a68499224d36b4c511c9, type: 3}
+  - {fileID: 2376672490801498733, guid: 29715190536444443a948d647ce88ae7, type: 3}
   overlays: []
   customFolder: Resources/Sprites/Icons
   rawIcon: {fileID: 0}
