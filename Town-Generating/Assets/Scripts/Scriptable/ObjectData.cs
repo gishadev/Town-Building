@@ -65,7 +65,7 @@ public class ObjectData : ScriptableObject
             firstPalette = palettes[0];
         else
             palettes.Add(firstPalette);
-        
+
         firstPalette.materials = MeshRenderer.sharedMaterials;
     }
     #endregion
@@ -81,4 +81,12 @@ public enum ObjectType
 public class Palette
 {
     public Material[] materials;
+
+    public Palette()
+    { }
+
+    public Palette(Material[] _materials)
+    {
+        materials = _materials;
+    }
 }

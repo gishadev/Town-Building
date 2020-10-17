@@ -7,23 +7,21 @@ public class Highlight : MonoBehaviour
     #endregion
 
     #region PRIVATE_FIELDS
-    MeshRenderer meshRenderer;
-    MeshFilter meshFilter;
+    MeshRenderer[] hlMeshRenderers;
+    MeshFilter[] hlMeshFilters;
 
-    Material[] defaultMaterials;
+    Palette[] defaultPalettes;
     #endregion
 
     void Awake()
     {
-        meshRenderer = highlight.GetComponent<MeshRenderer>();
-        meshFilter = highlight.GetComponent<MeshFilter>();
+        hlMeshRenderers = highlight.GetComponentsInChildren<MeshRenderer>();
+        hlMeshFilters = highlight.GetComponentsInChildren<MeshFilter>();
     }
 
     void Start()
     {
-        ChangeHighlightModel(
-            WorldManager.Instance.ObjectBuilder.NowObjectToBuild.MeshRenderer,
-            WorldManager.Instance.ObjectBuilder.NowObjectToBuild.MeshFilter);
+        ChangeHighlightModel(WorldManager.Instance.ObjectBuilder.NowObjectToBuild.Obj);
     }
 
     public void Enable()
@@ -41,7 +39,8 @@ public class Highlight : MonoBehaviour
         highlight.transform.position = position;
         highlight.transform.rotation = rotation;
 
-        meshRenderer.sharedMaterials = defaultMaterials;
+        for (int i = 0; i < hlMeshRenderers.Length; i++)
+            hlMeshRenderers[i].sharedMaterials = defaultPalettes[i].materials;
     }
 
     public void PlaceHighlight(Vector3 position, Quaternion rotation, Material mat)
@@ -49,19 +48,51 @@ public class Highlight : MonoBehaviour
         highlight.transform.position = position;
         highlight.transform.rotation = rotation;
 
-        Material[] newMaterials = new Material[meshRenderer.sharedMaterials.Length];
-        for (int i = 0; i < meshRenderer.sharedMaterials.Length; i++)
-            newMaterials[i] = mat;
+        for (int i = 0; i < hlMeshRenderers.Length; i++)
+        {
+            Material[] newMaterials = new Material[hlMeshRenderers[i].sharedMaterials.Length];
+            for (int j = 0; j < hlMeshRenderers[i].sharedMaterials.Length; j++)
+                newMaterials[j] = mat;
 
-        meshRenderer.sharedMaterials = newMaterials;
+            hlMeshRenderers[i].sharedMaterials = newMaterials;
+        }
     }
 
-    public void ChangeHighlightModel(MeshRenderer _meshRenderer, MeshFilter _meshFilter)
+    public void ChangeHighlightModel(GameObject obj)
     {
-        meshRenderer.transform.localScale = _meshRenderer.transform.localScale;
-        meshFilter.sharedMesh = _meshFilter.sharedMesh;
+        // Getting new components.
+        MeshRenderer[] _meshRenderers = PrefabChildren.GetAllChilds<MeshRenderer>(obj.transform);
+        MeshFilter[] _meshFilters = PrefabChildren.GetAllChilds<MeshFilter>(obj.transform);
 
-        defaultMaterials = _meshRenderer.sharedMaterials;
-        meshRenderer.sharedMaterials = defaultMaterials;
+        // Destroying components.
+        for (int i = 0; i < highlight.transform.childCount; i++)
+            Destroy(highlight.transform.GetChild(i).gameObject);
+
+        // Reinstantiating components.
+        MeshRenderer[] hlmr = new MeshRenderer[_meshFilters.Length];
+        MeshFilter[] hlmf = new MeshFilter[_meshFilters.Length];
+        hlmf[0] = highlight.GetComponent<MeshFilter>();
+        hlmr[0] = highlight.GetComponent<MeshRenderer>();
+        for (int i = 1; i < _meshFilters.Length; i++)
+        {
+            GameObject g = new GameObject("Child");
+            g.transform.SetParent(highlight.transform);
+            g.transform.localPosition = _meshFilters[i].transform.localPosition;
+            hlmf[i] = g.AddComponent<MeshFilter>();
+            hlmr[i] = g.AddComponent<MeshRenderer>();
+        }
+        hlMeshRenderers = hlmr;
+        hlMeshFilters = hlmf;
+
+        // Reinstalling materials and models in components.
+        defaultPalettes = new Palette[_meshFilters.Length];
+        for (int i = 0; i < _meshFilters.Length; i++)
+        {
+            hlMeshRenderers[i].transform.localScale = _meshRenderers[i].transform.localScale;
+            hlMeshFilters[i].sharedMesh = _meshFilters[i].sharedMesh;
+
+            defaultPalettes[i] = new Palette(_meshRenderers[i].sharedMaterials);
+            hlMeshRenderers[i].sharedMaterials = defaultPalettes[i].materials;
+        }
     }
 }

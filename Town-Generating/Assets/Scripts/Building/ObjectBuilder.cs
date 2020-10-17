@@ -186,7 +186,7 @@ public class ObjectBuilder : MonoBehaviour
     public void ChangeObject(int index)
     {
         NowObjectToBuild = NowObjectCategory.objectsData[index];
-        highlight.ChangeHighlightModel(NowObjectToBuild.MeshRenderer, NowObjectToBuild.MeshFilter);
+        highlight.ChangeHighlightModel(NowObjectToBuild.Obj);
     }
 
     public void ChangeCategory(int index)
