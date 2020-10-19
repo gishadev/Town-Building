@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Brick_Road
   m_EditorClassIdentifier: 
   Name: Brick Road
+  ObjType: 1
   Obj: {fileID: 6464261693033896103, guid: 86319e0e493c8dd458bfb700b7e77aae, type: 3}
-  Sprite: {fileID: 21300000, guid: 70afbc965365d9b43974408098ef647e, type: 3}
+  Sprite: {fileID: 21300000, guid: 25a3a9c3c6a8d594f8c2ff5168e4b4a5, type: 3}
   palettes:
   - materials:
-    - {fileID: 2100000, guid: 526b659c23d39624b859ab5d48ab7a58, type: 2}
+    - {fileID: 2100000, guid: 4ada713ff2b98674d92c229731fa2547, type: 2}
+  isStaticPalette: 1

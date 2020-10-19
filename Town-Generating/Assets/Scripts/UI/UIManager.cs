@@ -64,7 +64,7 @@ public class UIManager : MonoBehaviour
             {
                 // Creating Object UI Element for current Category UI Element.
                 ObjectUIElement OUIE = Instantiate(ObjectUIElementPrefab, objectsParent.transform.position, Quaternion.identity, objectsParent.transform).GetComponent<ObjectUIElement>();
-                OUIE.Image.sprite = category.objectsData[j].Sprite;
+                OUIE.iconImg.sprite = category.objectsData[j].Sprite;
                 OUIE.Text.text = category.objectsData[j].Name;
             }
         }

@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Wheat
   m_EditorClassIdentifier: 
   Name: Wheat
+  ObjType: 0
   Obj: {fileID: 3513061221777176178, guid: 1a8e1e9e7b991da4d9d65acad23bb340, type: 3}
-  Sprite: {fileID: 21300000, guid: 64063ed94831a2f459c2ff19800de409, type: 3}
+  Sprite: {fileID: 21300000, guid: c5bf28c261941d543acf0bb589229e27, type: 3}
   palettes:
   - materials:
-    - {fileID: -7904867580691626643, guid: 6869add4114df0c439b1a7da4b0c4dea, type: 3}
+    - {fileID: 2100000, guid: 4ea1bdd55d859ec43a68c2c886505c04, type: 2}
+  isStaticPalette: 1

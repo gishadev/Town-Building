@@ -13,21 +13,23 @@ MonoBehaviour:
   m_Name: Trading_Place
   m_EditorClassIdentifier: 
   Name: Trading Place
+  ObjType: 0
   Obj: {fileID: 5087829114132359080, guid: d15f83cb2911af04c9861f144d94cdaf, type: 3}
-  Sprite: {fileID: 21300000, guid: 44a226a9f09861b46a1f55c14c4a526a, type: 3}
+  Sprite: {fileID: 21300000, guid: 10acf2d5526fa4c42b43e96e841a1b4f, type: 3}
   palettes:
   - materials:
-    - {fileID: 2100000, guid: 94adade357b4fff43a8fb3b5104f10b2, type: 2}
     - {fileID: 2100000, guid: b3456a630687db44ca12e89b77916186, type: 2}
+    - {fileID: 2100000, guid: 24a27d7d227a3c94b8be72dd1581ced3, type: 2}
     - {fileID: 2100000, guid: b83d77d1853cd544f80eaa49d08dec4a, type: 2}
     - {fileID: 2100000, guid: 89d93eed8b998884bb27812d4aede25c, type: 2}
   - materials:
-    - {fileID: 2100000, guid: 94adade357b4fff43a8fb3b5104f10b2, type: 2}
     - {fileID: 2100000, guid: b3456a630687db44ca12e89b77916186, type: 2}
+    - {fileID: 2100000, guid: 24a27d7d227a3c94b8be72dd1581ced3, type: 2}
     - {fileID: 2100000, guid: 926c5309a4286cd40a797086e91ba0fd, type: 2}
     - {fileID: 2100000, guid: 89d93eed8b998884bb27812d4aede25c, type: 2}
   - materials:
-    - {fileID: 2100000, guid: 94adade357b4fff43a8fb3b5104f10b2, type: 2}
     - {fileID: 2100000, guid: b3456a630687db44ca12e89b77916186, type: 2}
+    - {fileID: 2100000, guid: 24a27d7d227a3c94b8be72dd1581ced3, type: 2}
     - {fileID: 2100000, guid: f92d4e01172686b4fad2ae7dc25e448c, type: 2}
     - {fileID: 2100000, guid: 89d93eed8b998884bb27812d4aede25c, type: 2}
+  isStaticPalette: 0

@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Monument
   m_EditorClassIdentifier: 
   Name: Monument
+  ObjType: 0
   Obj: {fileID: 7075091399089151753, guid: 65d1432d70c717a4b9e53137b03940a3, type: 3}
-  Sprite: {fileID: 21300000, guid: 9a90ca8dd5d21c44ca8a32724ee91582, type: 3}
+  Sprite: {fileID: 21300000, guid: 8ef9d1afe0452aa439ef30e7e54778f9, type: 3}
   palettes:
   - materials:
     - {fileID: 2100000, guid: ed7ca81e7cac5eb42a9bebad28f5d3c5, type: 2}
+  isStaticPalette: 1

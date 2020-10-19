@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Brick_Wall_Cross
   m_EditorClassIdentifier: 
   Name: Cross Brick Wall
+  ObjType: 0
   Obj: {fileID: 4062785176205428289, guid: 9ce74590c4aa2914f962b649b578bb14, type: 3}
-  Sprite: {fileID: 21300000, guid: 6c5024dd88f2e534cb34e386f4f07067, type: 3}
+  Sprite: {fileID: 21300000, guid: 1aa06e544f3dba04a911458d4569c82f, type: 3}
   palettes:
   - materials:
-    - {fileID: 2100000, guid: 526b659c23d39624b859ab5d48ab7a58, type: 2}
-    - {fileID: -1444460858095362738, guid: 103dccfa32d08d24d8fdbf6b9a0b7d3e, type: 3}
+    - {fileID: 2100000, guid: 4ada713ff2b98674d92c229731fa2547, type: 2}
+    - {fileID: 2100000, guid: 24a27d7d227a3c94b8be72dd1581ced3, type: 2}
+  isStaticPalette: 1

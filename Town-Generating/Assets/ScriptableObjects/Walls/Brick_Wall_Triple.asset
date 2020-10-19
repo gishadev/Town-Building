@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Brick_Wall_Triple
   m_EditorClassIdentifier: 
   Name: Triple Brick Wall
+  ObjType: 0
   Obj: {fileID: 1391663480350648966, guid: 3aa65e5235fa86448af69ed7ecc585e4, type: 3}
-  Sprite: {fileID: 21300000, guid: 65f5b9456ab1ce14ca3755e264bd5c76, type: 3}
+  Sprite: {fileID: 21300000, guid: 9f759932e459dd7429da682d97b50f87, type: 3}
   palettes:
   - materials:
-    - {fileID: 2100000, guid: 526b659c23d39624b859ab5d48ab7a58, type: 2}
-    - {fileID: -1444460858095362738, guid: 103dccfa32d08d24d8fdbf6b9a0b7d3e, type: 3}
+    - {fileID: 2100000, guid: 4ada713ff2b98674d92c229731fa2547, type: 2}
+    - {fileID: 2100000, guid: 24a27d7d227a3c94b8be72dd1581ced3, type: 2}
+  isStaticPalette: 1

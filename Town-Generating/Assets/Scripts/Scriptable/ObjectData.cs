@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Object", menuName = "Scriptable Objects/Object")]
@@ -29,6 +30,7 @@ public class ObjectData : ScriptableObject
             }
 
             isStaticPalette = value;
+            EditorUtility.SetDirty(this);
         }
     }
 
