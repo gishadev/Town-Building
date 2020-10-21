@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: House 2
   ObjType: 0
-  Obj: {fileID: 1835395074570721617, guid: 8f2f6bff92af70141a1e00f8a5f214d2, type: 3}
-  Sprite: {fileID: 21300000, guid: 0cd551408b76cd34fb8b6270cb9885f5, type: 3}
+  Obj: {fileID: 5770323177896751953, guid: 53974558ad78aec48aa653cfff054b39, type: 3}
+  Sprite: {fileID: 21300000, guid: 7f8c827057d98f541a42696fbdc622be, type: 3}
   palettes:
   - materials:
-    - {fileID: 2100000, guid: 24a27d7d227a3c94b8be72dd1581ced3, type: 2}
-    - {fileID: 2100000, guid: ab14d59a68ef06c479e01b7731f0006e, type: 2}
-    - {fileID: 2100000, guid: 0d6095a95d7283849bd8af36f13b8bb2, type: 2}
-    - {fileID: 2100000, guid: ed7ca81e7cac5eb42a9bebad28f5d3c5, type: 2}
-    - {fileID: 2100000, guid: 8c9b9ac42049d374080ee6423f9203a9, type: 2}
+    - {fileID: 2100000, guid: ce824619af3bcdd459a62a2b04a32682, type: 2}
+    - {fileID: 2100000, guid: 7a33cb54f85866344bda69366d944725, type: 2}
+    - {fileID: 2100000, guid: 628a2c30f947dca478f43b3b0d073771, type: 2}
+    - {fileID: 2100000, guid: bba6ed8f10aa9274798944249e030f79, type: 2}
+    - {fileID: 2100000, guid: 49fd6104a2b8aa841be73a12b19b941a, type: 2}
   isStaticPalette: 1

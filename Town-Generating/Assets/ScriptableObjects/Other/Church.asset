@@ -14,12 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Church
   ObjType: 0
-  Obj: {fileID: 8295718020759263650, guid: 4bd5371c2f39421489f7f43c54dbebb3, type: 3}
-  Sprite: {fileID: 21300000, guid: 1d4910aa97a7be2459d7fd47a5285631, type: 3}
+  Obj: {fileID: 3485797417651373636, guid: 66f8bdb7c43d49342a2ef7fd9ce4a0d5, type: 3}
+  Sprite: {fileID: 21300000, guid: 838692de72ef7c541a56b2ace69c4189, type: 3}
   palettes:
   - materials:
-    - {fileID: 2100000, guid: 0d6095a95d7283849bd8af36f13b8bb2, type: 2}
-    - {fileID: 2100000, guid: ab14d59a68ef06c479e01b7731f0006e, type: 2}
-    - {fileID: 2100000, guid: 24a27d7d227a3c94b8be72dd1581ced3, type: 2}
-    - {fileID: 2100000, guid: 8c9b9ac42049d374080ee6423f9203a9, type: 2}
+    - {fileID: 2100000, guid: ce824619af3bcdd459a62a2b04a32682, type: 2}
+    - {fileID: 2100000, guid: 7a33cb54f85866344bda69366d944725, type: 2}
+    - {fileID: 2100000, guid: bba6ed8f10aa9274798944249e030f79, type: 2}
+    - {fileID: 2100000, guid: 628a2c30f947dca478f43b3b0d073771, type: 2}
+    - {fileID: 8556262120643298411, guid: 2a8635e2b6ee88c47b02563675747b7d, type: 3}
   isStaticPalette: 1

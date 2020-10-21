@@ -57,7 +57,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MainTexture:
         m_Texture: {fileID: 2800000, guid: 5559e74d854ed384b939ee2b2502a2da, type: 3}
-        m_Scale: {x: 10, y: 10}
+        m_Scale: {x: 5, y: 5}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
@@ -68,11 +68,19 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: e7cc4253a3e3454409d62a51f7a27920, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalsTexture:
+        m_Texture: {fileID: 2800000, guid: e7cc4253a3e3454409d62a51f7a27920, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionTexture:
+        m_Texture: {fileID: 2800000, guid: 02dd413ded2d12d4789de15226273aab, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclussionMap:
@@ -89,6 +97,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _ReflectionMask:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RoughnessTexture:
+        m_Texture: {fileID: 2800000, guid: dc84fc5b7b413a64d9a4e74e0051d954, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
@@ -118,7 +130,7 @@ Material:
     - _Glossiness: 0
     - _GlossinessSource: 0
     - _GlossyReflections: 1
-    - _HighlightOffset: -0.9
+    - _HighlightOffset: -0.91
     - _MaxOutlineWidth: 0
     - _Metallic: 0
     - _Metalness: 1
@@ -152,10 +164,10 @@ Material:
     - _Color: {r: 0.46260747, g: 0.7169812, b: 0.44304025, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _HDREmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _HighlightColor: {r: 0.1415094, g: 0.1345007, b: 0.123487, a: 0}
-    - _MainColor: {r: 0.629984, g: 0.9339623, b: 0.73975396, a: 0}
+    - _HighlightColor: {r: 0.103773594, g: 0.103773594, b: 0.103773594, a: 0}
+    - _MainColor: {r: 1, g: 1, b: 1, a: 0}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
-    - _ShadowColor: {r: 0.5377358, g: 0.5377358, b: 0.5377358, a: 0}
+    - _ShadowColor: {r: 0.5471698, g: 0.5471698, b: 0.5471698, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &5390101337920099001

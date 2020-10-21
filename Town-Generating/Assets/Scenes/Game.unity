@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657832, g: 0.4964139, b: 0.57481974, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657832, g: 0.49641216, b: 0.5748164, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -409,16 +409,27 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 57945b33665f93448b9a88d2d1e9a6b0, type: 2}
   - Name: Walls
     objectsData:
-    - {fileID: 11400000, guid: 9b6d070f2b0353c43ac0b887866c075b, type: 2}
     - {fileID: 11400000, guid: 54e7a0167f3f3b247a6e70c7ca1b4f0a, type: 2}
-    - {fileID: 11400000, guid: b56f248d76f9fe741b55f139426c0ccd, type: 2}
     - {fileID: 11400000, guid: 0631c630305401a48bf8935bdab2b734, type: 2}
+    - {fileID: 11400000, guid: b56f248d76f9fe741b55f139426c0ccd, type: 2}
+    - {fileID: 11400000, guid: 9b6d070f2b0353c43ac0b887866c075b, type: 2}
+    - {fileID: 11400000, guid: f8fec9d0873e1d842b64b4a00c8b9b44, type: 2}
+    - {fileID: 11400000, guid: e3d903a502247794e96378cd38999e79, type: 2}
+    - {fileID: 11400000, guid: c59281f2f0d5d8144b4767c7f10670c7, type: 2}
+  - Name: Nature
+    objectsData:
+    - {fileID: 11400000, guid: c81988704187ecb45a4bf0fee6a6aa0d, type: 2}
+    - {fileID: 11400000, guid: 6757386ef359d64499c61b885ac3fd8c, type: 2}
+    - {fileID: 11400000, guid: b9f9a272aab91f24d8a9530387e16d87, type: 2}
+    - {fileID: 11400000, guid: f03ee82fa0951cf4084a372b75e3061c, type: 2}
+    - {fileID: 11400000, guid: e51a9712b3946d64bb6cde20d6688d9f, type: 2}
+    - {fileID: 11400000, guid: 966f26cba01d3db4595147476b3fb284, type: 2}
+    - {fileID: 11400000, guid: 9652050c5860aad46bc18edbd0af48a2, type: 2}
   - Name: Other
     objectsData:
     - {fileID: 11400000, guid: d9225721409d6c64889ed4481cf30848, type: 2}
     - {fileID: 11400000, guid: 86861c11d9156654e9f7e42c194a7332, type: 2}
     - {fileID: 11400000, guid: 6e19185bf731a4a4f8c8572516acf91d, type: 2}
-    - {fileID: 11400000, guid: 9652050c5860aad46bc18edbd0af48a2, type: 2}
   blockedMaterial: {fileID: 2100000, guid: 3f97a82ce1789d3499a26bd70040e008, type: 2}
   isEnabled: 1
 --- !u!114 &495097044
@@ -522,13 +533,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
-  m_LocalRotation: {x: 0.39044833, y: 0.34682897, z: -0.161729, w: 0.8373192}
+  m_LocalRotation: {x: 0.41900265, y: -0.11829695, z: 0.05516277, w: 0.8985542}
   m_LocalPosition: {x: 0, y: 15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0.56965}
   m_Children: []
   m_Father: {fileID: 1247046793}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 50, y: 45, z: 0}
+  m_LocalEulerAnglesHint: {x: 50, y: -15, z: 0}
 --- !u!1 &732869560
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20e0fda110af27f46a9a58e8bc54227d, type: 3}
+  m_Name: Bush_2
+  m_EditorClassIdentifier: 
+  Name: Bush 2
+  ObjType: 0
+  Obj: {fileID: 6794620174557239691, guid: 1257222c8140cd94aa58637deffb317a, type: 3}
+  Sprite: {fileID: 21300000, guid: 05a1f8e94282d0847b3fe73a987d90f4, type: 3}
+  palettes:
+  - materials:
+    - {fileID: 2100000, guid: 8a036ebb833c03d418360defcd433585, type: 2}
+  isStaticPalette: 1

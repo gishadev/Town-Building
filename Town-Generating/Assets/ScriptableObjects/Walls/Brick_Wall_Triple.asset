@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20e0fda110af27f46a9a58e8bc54227d, type: 3}
   m_Name: Brick_Wall_Triple
   m_EditorClassIdentifier: 
-  Name: Triple Brick Wall
+  Name: Triple Wall
   ObjType: 0
-  Obj: {fileID: 1391663480350648966, guid: 3aa65e5235fa86448af69ed7ecc585e4, type: 3}
-  Sprite: {fileID: 21300000, guid: 9f759932e459dd7429da682d97b50f87, type: 3}
+  Obj: {fileID: 4127624449866375568, guid: a9a19252e905d024dac5081e6b93d417, type: 3}
+  Sprite: {fileID: 21300000, guid: 993c043a0a2f38444bd0bae35fc266cf, type: 3}
   palettes:
   - materials:
     - {fileID: 2100000, guid: 4ada713ff2b98674d92c229731fa2547, type: 2}
-    - {fileID: 2100000, guid: 24a27d7d227a3c94b8be72dd1581ced3, type: 2}
+    - {fileID: 2100000, guid: b3456a630687db44ca12e89b77916186, type: 2}
   isStaticPalette: 1

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20e0fda110af27f46a9a58e8bc54227d, type: 3}
+  m_Name: Tree_2
+  m_EditorClassIdentifier: 
+  Name: Tree 2
+  ObjType: 0
+  Obj: {fileID: 3945093642661502601, guid: 1a542abcad9bc5940a9eb9f5cd2bea72, type: 3}
+  Sprite: {fileID: 21300000, guid: 8e84ccf57106d0443bff2cc04ef21ab3, type: 3}
+  palettes:
+  - materials:
+    - {fileID: 2100000, guid: 24a27d7d227a3c94b8be72dd1581ced3, type: 2}
+    - {fileID: 2100000, guid: 8a036ebb833c03d418360defcd433585, type: 2}
+  isStaticPalette: 1
