@@ -23,4 +23,22 @@ MonoBehaviour:
     - {fileID: 2100000, guid: bba6ed8f10aa9274798944249e030f79, type: 2}
     - {fileID: 2100000, guid: 628a2c30f947dca478f43b3b0d073771, type: 2}
     - {fileID: 8556262120643298411, guid: 2a8635e2b6ee88c47b02563675747b7d, type: 3}
-  isStaticPalette: 1
+  - materials:
+    - {fileID: 2100000, guid: e545008b7693b4e4a8095ae1decaa9ae, type: 2}
+    - {fileID: 2100000, guid: 7a33cb54f85866344bda69366d944725, type: 2}
+    - {fileID: 2100000, guid: bba6ed8f10aa9274798944249e030f79, type: 2}
+    - {fileID: 2100000, guid: 628a2c30f947dca478f43b3b0d073771, type: 2}
+    - {fileID: 8556262120643298411, guid: 2a8635e2b6ee88c47b02563675747b7d, type: 3}
+  - materials:
+    - {fileID: 2100000, guid: dbfb465ae95a0b6418be6facabe357bc, type: 2}
+    - {fileID: 2100000, guid: 7a33cb54f85866344bda69366d944725, type: 2}
+    - {fileID: 2100000, guid: bba6ed8f10aa9274798944249e030f79, type: 2}
+    - {fileID: 2100000, guid: 628a2c30f947dca478f43b3b0d073771, type: 2}
+    - {fileID: 8556262120643298411, guid: 2a8635e2b6ee88c47b02563675747b7d, type: 3}
+  - materials:
+    - {fileID: 2100000, guid: 45a1b35f024b0dc48a68be3d71ecd1bb, type: 2}
+    - {fileID: 2100000, guid: 7a33cb54f85866344bda69366d944725, type: 2}
+    - {fileID: 2100000, guid: bba6ed8f10aa9274798944249e030f79, type: 2}
+    - {fileID: 2100000, guid: 628a2c30f947dca478f43b3b0d073771, type: 2}
+    - {fileID: 8556262120643298411, guid: 2a8635e2b6ee88c47b02563675747b7d, type: 3}
+  isStaticPalette: 0

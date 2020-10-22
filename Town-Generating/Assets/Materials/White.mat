@@ -102,6 +102,7 @@ Material:
     m_Floats:
     - _AlbedoGloss: 1
     - _AlbedoGlossIntensity: 0
+    - _AlbedoShading: 1
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1

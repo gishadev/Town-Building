@@ -18,5 +18,5 @@ MonoBehaviour:
   Sprite: {fileID: 21300000, guid: 25a3a9c3c6a8d594f8c2ff5168e4b4a5, type: 3}
   palettes:
   - materials:
-    - {fileID: 2100000, guid: 4ada713ff2b98674d92c229731fa2547, type: 2}
+    - {fileID: 2100000, guid: 1b245e45fdf4d3745b6da4dcf3076455, type: 2}
   isStaticPalette: 1

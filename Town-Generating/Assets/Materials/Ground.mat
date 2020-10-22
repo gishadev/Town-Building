@@ -20,7 +20,19 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Albedo:
-        m_Texture: {fileID: 2800000, guid: 6706c7d99da333e4d8fd5c0b68582d3e, type: 3}
+        m_Texture: {fileID: 2800000, guid: 75f8aa2f9034f944d9b480b6be42ac2a, type: 3}
+        m_Scale: {x: 5, y: 5}
+        m_Offset: {x: 0, y: 0}
+    - _BotTexture0:
+        m_Texture: {fileID: 2800000, guid: e3cd2566d9b7a7744a25de5f6fdd2209, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BottomAlbedo:
+        m_Texture: {fileID: 2800000, guid: 3f36698f925dce34580fbd26266aa259, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Bottom_Black:
+        m_Texture: {fileID: 2800000, guid: e3cd2566d9b7a7744a25de5f6fdd2209, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -43,9 +55,13 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _HeightMap:
-        m_Texture: {fileID: 2800000, guid: 440f64e03299da144ba4b4b3cc28108f, type: 3}
+    - _GridTexture:
+        m_Texture: {fileID: 2800000, guid: 3ba78da4d68c20148b1c28d3cd68d5dc, type: 3}
         m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _HeightMap:
+        m_Texture: {fileID: 2800000, guid: 39690af05f768e14e9e44d196a9e92df, type: 3}
+        m_Scale: {x: 5, y: 5}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
@@ -55,13 +71,21 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _Normal:
-        m_Texture: {fileID: 2800000, guid: e7cc4253a3e3454409d62a51f7a27920, type: 3}
+    - _MidTexture0:
+        m_Texture: {fileID: 2800000, guid: e3cd2566d9b7a7744a25de5f6fdd2209, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _Occlusion:
-        m_Texture: {fileID: 2800000, guid: 02dd413ded2d12d4789de15226273aab, type: 3}
+    - _Mid_Black:
+        m_Texture: {fileID: 2800000, guid: e3cd2566d9b7a7744a25de5f6fdd2209, type: 3}
         m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Normal:
+        m_Texture: {fileID: 2800000, guid: 45e31701ebe1c6246ab0d18197d31ef4, type: 3}
+        m_Scale: {x: 5, y: 5}
+        m_Offset: {x: 0, y: 0}
+    - _Occlusion:
+        m_Texture: {fileID: 2800000, guid: 8a40717a76f39d246bffb91c4ba9b44d, type: 3}
+        m_Scale: {x: 5, y: 5}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
         m_Texture: {fileID: 0}
@@ -71,12 +95,28 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Roughness:
+        m_Texture: {fileID: 2800000, guid: 842450f8ceabf7549b9591022dac5995, type: 3}
+        m_Scale: {x: 5, y: 5}
+        m_Offset: {x: 0, y: 0}
     - _SplatMask:
         m_Texture: {fileID: 2800000, guid: 8c4a7fca2884fab419769ccc0355c0c1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TextureSample0:
         m_Texture: {fileID: 2800000, guid: 440f64e03299da144ba4b4b3cc28108f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TopAlbedo:
+        m_Texture: {fileID: 2800000, guid: 75f8aa2f9034f944d9b480b6be42ac2a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TopTexture0:
+        m_Texture: {fileID: 2800000, guid: 0ede5e9dea0444c4383221dc5b49e8fd, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Top_White:
+        m_Texture: {fileID: 2800000, guid: 0ede5e9dea0444c4383221dc5b49e8fd, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _texcoord:
@@ -88,6 +128,7 @@ Material:
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
+    - _Displacement: 0
     - _DstBlend: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
@@ -100,10 +141,15 @@ Material:
     - _Smothness: 0.1
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _TriplanarFalloff: 0.01
     - _UVSec: 0
     - _ZWrite: 1
-    - __dirty: 0
+    - __dirty: 1
     m_Colors:
+    - _BottomTint: {r: 0.1509434, g: 0.07081999, b: 0.00071199884, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _GridTint: {r: 0.047169805, g: 0.047169805, b: 0.047169805, a: 0}
+    - _Tiling: {r: 55, g: 55, b: 0, a: 0}
+    - _Tint: {r: 0.64764315, g: 1, b: 0.6179246, a: 0}
   m_BuildTextureStacks: []
