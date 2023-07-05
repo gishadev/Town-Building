@@ -10,9 +10,9 @@ Nothing special, but I see a potential in this simple system.
 * Creating Toon custom lighting in ASE
 
 ## Controls
-* W,A,S,D / Press and Drag LMB - Camera Movement
+* W,A,S,D / Press and Drag RMB - Camera Movement
 * Q,E / Press and Drag Mouse Wheel - Camera Rotation
-* RMB - Build/Destroy
+* LMB - Build/Destroy
 * R - Rotate structures
 * M - Max zoom size (Map Mode)
 
