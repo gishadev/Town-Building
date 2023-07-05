@@ -6,17 +6,18 @@ using UnityEngine;
 public class ObjectData : ScriptableObject
 {
     #region PUBLIC_FIELDS
-    [Header("Main")]
-    public string Name;
+
+    [Header("Main")] public string Name;
     public ObjectType ObjType;
     public GameObject Obj;
     public Sprite Sprite;
 
-    [Header("Palettes")]
-    public List<Palette> palettes = new List<Palette>();
+    [Header("Palettes")] public List<Palette> palettes = new List<Palette>();
+
     #endregion
 
     #region PROPERTIES
+
     public bool IsStaticPalette
     {
         get => isStaticPalette;
@@ -30,7 +31,9 @@ public class ObjectData : ScriptableObject
             }
 
             isStaticPalette = value;
+#if UNITY_EDITOR
             EditorUtility.SetDirty(this);
+#endif
         }
     }
 
@@ -40,8 +43,10 @@ public class ObjectData : ScriptableObject
     {
         get
         {
-            int x = Mathf.RoundToInt((MeshFilter.sharedMesh.bounds.max.x - MeshFilter.sharedMesh.bounds.min.x) * Obj.transform.localScale.x);
-            int z = Mathf.RoundToInt((MeshFilter.sharedMesh.bounds.max.z - MeshFilter.sharedMesh.bounds.min.z) * Obj.transform.localScale.z);
+            int x = Mathf.RoundToInt((MeshFilter.sharedMesh.bounds.max.x - MeshFilter.sharedMesh.bounds.min.x) *
+                                     Obj.transform.localScale.x);
+            int z = Mathf.RoundToInt((MeshFilter.sharedMesh.bounds.max.z - MeshFilter.sharedMesh.bounds.min.z) *
+                                     Obj.transform.localScale.z);
 
             return new Vector2Int(x, z);
         }
@@ -56,9 +61,11 @@ public class ObjectData : ScriptableObject
     {
         get => Obj.GetComponent<MeshFilter>();
     }
+
     #endregion
 
     #region METHODS
+
     public void RestoreDefaultPalette()
     {
         Palette firstPalette = new Palette();
@@ -70,6 +77,7 @@ public class ObjectData : ScriptableObject
 
         firstPalette.materials = MeshRenderer.sharedMaterials;
     }
+
     #endregion
 }
 
@@ -85,7 +93,8 @@ public class Palette
     public Material[] materials;
 
     public Palette()
-    { }
+    {
+    }
 
     public Palette(Material[] _materials)
     {
