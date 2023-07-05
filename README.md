@@ -13,6 +13,7 @@ Nothing special, but I see a potential in this simple system.
 * W,A,S,D / Press and Drag LMB - Camera Movement
 * Q,E / Press and Drag Mouse Wheel - Camera Rotation
 * RMB - Build/Destroy
+* M - Max zoom size (Map Mode)
 
 ## Screenshots
 
